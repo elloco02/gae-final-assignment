@@ -1,6 +1,9 @@
+class_name Player
 extends CharacterBody2D
 
 @export var speed: int = 300.0
+
+@onready var gun: Gun = $Gun
 
 func _physics_process(_delta: float) -> void:
 	get_input()
