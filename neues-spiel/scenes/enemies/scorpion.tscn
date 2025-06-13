@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp3h1p0md3kss"]
+
+[ext_resource type="Script" uid="uid://5n6gbl1l8hcy" path="res://scripts/enemies/scorpion/scorpion.gd" id="1_le87g"]
+[ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://scenes/health_component.tscn" id="2_eoj0c"]
+[ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://scenes/hitbox_component.tscn" id="3_m4trt"]
+
+[sub_resource type="Gradient" id="Gradient_le87g"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_anpvi"]
+gradient = SubResource("Gradient_le87g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as7p5"]
+size = Vector2(8, 8)
+
+[node name="Scorpion" type="Node2D"]
+script = ExtResource("1_le87g")
+metadata/_custom_type_script = "uid://5n6gbl1l8hcy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.032, 8)
+texture = SubResource("GradientTexture1D_anpvi")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_eoj0c")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_m4trt")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_as7p5")

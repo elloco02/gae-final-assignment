@@ -14,6 +14,10 @@ config/name="Neues Spiel"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Players="Collection of players"
+
 [input]
 
 up={
