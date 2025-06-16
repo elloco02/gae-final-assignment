@@ -1,5 +1,5 @@
 class_name MoveSpeedUpgrade
-extends BaseStat
+extends BasePlayerUpgrade
 
 @export var speed_increase: float = 50
 

@@ -4,6 +4,12 @@ extends CharacterBody2D
 @export var speed: int = 300.0
 
 @onready var gun: Gun = $Gun
+var stat_upgrades: Array[BasePlayerUpgrade] = []
+
+func _init() -> void:
+	# loop over all stat upgrades and apply
+	for upgrade in stat_upgrades:
+		upgrade.apply_upgrade(self)
 
 func _physics_process(_delta: float) -> void:
 	get_input()

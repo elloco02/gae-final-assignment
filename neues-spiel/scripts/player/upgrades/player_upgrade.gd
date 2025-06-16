@@ -3,7 +3,7 @@ extends Area2D
 
 @export var upgrade_label: Label
 #@export var sprite : Sprite2D
-@export var player_upgrade: BaseStat:
+@export var player_upgrade: BasePlayerUpgrade:
 	set(val):
 		player_upgrade = val
 		needs_update = true

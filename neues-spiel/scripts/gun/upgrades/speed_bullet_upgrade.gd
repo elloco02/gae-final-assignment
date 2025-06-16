@@ -1,5 +1,5 @@
 class_name SpeedBulletUpgrade
-extends BaseBullet
+extends BaseBulletUpgrade
 
 @export var speed_increase: float = 1.5
 

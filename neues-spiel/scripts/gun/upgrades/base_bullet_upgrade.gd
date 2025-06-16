@@ -1,7 +1,7 @@
-class_name BaseBullet
+class_name BaseBulletUpgrade
 extends Resource
 
-@export var upgrade_text : String = ""
+@export var upgrade_text: String = ""
 
 # this is the function that is later called when firing a bullet
 func apply_upgrade(bullet: Bullet):

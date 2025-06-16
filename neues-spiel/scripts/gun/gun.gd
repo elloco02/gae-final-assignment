@@ -5,7 +5,7 @@ extends Node2D
 @onready var player: Player = get_parent()
 
 var bullet = preload("res://scenes/bullet.tscn")
-var bullet_upgrades: Array[BaseBullet] = []
+var bullet_upgrades: Array[BaseBulletUpgrade] = []
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -27,6 +27,6 @@ func _physics_process(delta: float) -> void:
 		bullet_instance.global_position = self.muzzle.global_position
 		bullet_instance.rotation = self.rotation
 		
-		# loop over all strategy bullet upgrades and apply
-		for strategy in bullet_upgrades:
-			strategy.apply_upgrade(bullet_instance)
+		# loop over all bullet upgrades and apply
+		for upgrade in bullet_upgrades:
+			upgrade.apply_upgrade(bullet_instance)
