@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://r8w76u6336r6"]
+[gd_scene load_steps=3 format=3 uid="uid://r8w76u6336r6"]
 
-[ext_resource type="Script" uid="uid://1bq0kkxptmwy" path="res://scripts/bullet.gd" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://uhcel7pv5htu" path="res://scripts/gun/bullet.gd" id="1_mkf8s"]
 
-[node name="Bullet" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]
+size = Vector2(16, 16)
+
+[node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_mkf8s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -11,12 +14,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mkf8s")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(4.76837e-07, 4.76837e-07)
