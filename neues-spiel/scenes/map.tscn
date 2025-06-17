@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=6 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="Texture2D" uid="uid://c011cl5qxyi1d" path="res://assets/Tilemap/tilemap.png" id="1_4xfga"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://scenes/player.tscn" id="2_paxxb"]
-[ext_resource type="PackedScene" uid="uid://clu7d7ap7byie" path="res://scenes/bullet_upgrade.tscn" id="3_0cso3"]
-[ext_resource type="PackedScene" uid="uid://byof6iay2aapr" path="res://scenes/player_upgrade.tscn" id="3_2lpho"]
-[ext_resource type="Resource" uid="uid://b8ayf57voktsm" path="res://scripts/gun/upgrades/resources/speed_bullet.tres" id="4_2klcf"]
-[ext_resource type="Resource" uid="uid://cwndj3f3hlr8x" path="res://scripts/player/upgrades/resources/move_speed.tres" id="4_nakos"]
+[ext_resource type="PackedScene" uid="uid://bn2ss744xne43" path="res://upgrade_menu/upgrade_menu.tscn" id="3_gldc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -161,27 +158,11 @@ tile_map_data = PackedByteArray("AAD0//T/AAAAAAEAAABTAPT/AAACAAEAAABTADMAAAACAAM
 tile_set = SubResource("TileSet_gldc4")
 
 [node name="Player" parent="." instance=ExtResource("2_paxxb")]
+position = Vector2(576, 320)
 
-[node name="PlayerUpgrade" parent="." instance=ExtResource("3_2lpho")]
-position = Vector2(128, 288)
-player_upgrade = ExtResource("4_nakos")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PlayerUpgrade2" parent="." instance=ExtResource("3_2lpho")]
-position = Vector2(272, 136)
-player_upgrade = ExtResource("4_nakos")
-
-[node name="PlayerUpgrade3" parent="." instance=ExtResource("3_2lpho")]
-position = Vector2(312, 432)
-player_upgrade = ExtResource("4_nakos")
-
-[node name="BulletUpgrade" parent="." instance=ExtResource("3_0cso3")]
-position = Vector2(856, 96)
-bullet_upgrade = ExtResource("4_2klcf")
-
-[node name="BulletUpgrade2" parent="." instance=ExtResource("3_0cso3")]
-position = Vector2(904, 272)
-bullet_upgrade = ExtResource("4_2klcf")
-
-[node name="BulletUpgrade3" parent="." instance=ExtResource("3_0cso3")]
-position = Vector2(512, 144)
-bullet_upgrade = ExtResource("4_2klcf")
+[node name="UpgradeMenu" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_gldc4")]
+unique_name_in_owner = true
+visible = false
+player = NodePath("../../Player")
