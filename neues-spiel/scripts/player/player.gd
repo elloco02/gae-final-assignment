@@ -13,9 +13,16 @@ func _init() -> void:
 	for upgrade in stat_upgrades:
 		upgrade.apply_upgrade(self)
 
+
+func _ready() -> void:
+	# Initialize the player in the global group
+	add_to_group("players")
+
+
 func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()
+
 
 # get input direction from key press
 func get_input() -> void:
