@@ -13,8 +13,8 @@ size = Vector2(16, 16)
 
 [node name="PlayerUpgrade" type="Area2D" node_paths=PackedStringArray("upgrade_label")]
 script = ExtResource("1_3mkc4")
-player_upgrade = SubResource("Resource_51mho")
 upgrade_label = NodePath("Label")
+player_upgrade = SubResource("Resource_51mho")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8

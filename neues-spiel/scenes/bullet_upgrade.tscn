@@ -13,9 +13,8 @@ size = Vector2(16, 16)
 
 [node name="BulletUpgrade" type="Area2D" node_paths=PackedStringArray("upgrade_label")]
 script = ExtResource("1_xsw34")
-bullet_upgrade = SubResource("Resource_aje1s")
-needs_update = true
 upgrade_label = NodePath("Label")
+bullet_upgrade = SubResource("Resource_aje1s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
