@@ -10,7 +10,7 @@ var bullet_upgrades: Array[BaseBulletUpgrade] = []
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# rotate gun towards mouse position
 	look_at(get_global_mouse_position())
 	# flip sprite when looking to the left of the character
