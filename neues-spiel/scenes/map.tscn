@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=11 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="Texture2D" uid="uid://c011cl5qxyi1d" path="res://assets/Tilemap/tilemap.png" id="1_4xfga"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://scenes/player.tscn" id="2_paxxb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://b8ayf57voktsm" path="res://scripts/gun/upgrades/resources/speed_bullet.tres" id="4_2klcf"]
 [ext_resource type="Resource" uid="uid://cwndj3f3hlr8x" path="res://scripts/player/upgrades/resources/move_speed.tres" id="4_nakos"]
 [ext_resource type="PackedScene" uid="uid://o21c43cq4vbk" path="res://scenes/enemies/mummy.tscn" id="7_nakos"]
+[ext_resource type="PackedScene" uid="uid://cmbuf0drv1452" path="res://scenes/enemies/cactus_dude.tscn" id="8_jh32y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -193,3 +194,6 @@ needs_update = false
 
 [node name="Mummy" parent="." instance=ExtResource("7_nakos")]
 position = Vector2(278, 245)
+
+[node name="CactusDude" parent="." instance=ExtResource("8_jh32y")]
+position = Vector2(408, 154)

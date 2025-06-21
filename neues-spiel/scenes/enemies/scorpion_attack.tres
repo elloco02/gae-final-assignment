@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://c8csgkub8ggt2"]
+
+[ext_resource type="Script" uid="uid://bpiwcqci4quff" path="res://scripts/utility/attack.gd" id="1_q8wv8"]
+
+[resource]
+script = ExtResource("1_q8wv8")
+attack_damage = 0.0
+metadata/_custom_type_script = "uid://bpiwcqci4quff"
