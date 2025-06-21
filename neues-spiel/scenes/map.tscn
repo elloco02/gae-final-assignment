@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c011cl5qxyi1d" path="res://assets/Tilemap/tilemap.png" id="1_4xfga"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://scenes/player.tscn" id="2_paxxb"]
-[ext_resource type="PackedScene" path="res://scenes/bullet_upgrade.tscn" id="3_0cso3"]
-[ext_resource type="PackedScene" path="res://scenes/player_upgrade.tscn" id="3_2lpho"]
+[ext_resource type="PackedScene" uid="uid://clu7d7ap7byie" path="res://scenes/bullet_upgrade.tscn" id="3_0cso3"]
+[ext_resource type="PackedScene" uid="uid://byof6iay2aapr" path="res://scenes/player_upgrade.tscn" id="3_2lpho"]
 [ext_resource type="Resource" uid="uid://b8ayf57voktsm" path="res://scripts/gun/upgrades/resources/speed_bullet.tres" id="4_2klcf"]
 [ext_resource type="Resource" uid="uid://cwndj3f3hlr8x" path="res://scripts/player/upgrades/resources/move_speed.tres" id="4_nakos"]
 [ext_resource type="PackedScene" uid="uid://o21c43cq4vbk" path="res://scenes/enemies/mummy.tscn" id="7_nakos"]

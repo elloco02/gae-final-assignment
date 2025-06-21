@@ -30,7 +30,16 @@ func _physics_process(_delta: float):
 		return
 
 	var direction = closest_player.position - enemy.position
-	if direction.length() > attack_range:
+	var player_hitbox: HitboxComponent
+	for component in closest_player.get_children():
+		if component is HitboxComponent:
+			player_hitbox = component
+			break
+
+	var player_rect = (player_hitbox.get_child(0) as CollisionShape2D).shape.get_rect()
+	var player_size = Vector2(player_rect.size.x / 2, player_rect.size.y / 2)
+
+	if (direction - player_size).length() > attack_range:
 		enemy.velocity = direction.normalized() * enemy.speed
 	else:
 		enemy.velocity = Vector2.ZERO
