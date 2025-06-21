@@ -1,3 +1,5 @@
 class_name Attack
 
-var attack_damage: float = 0.0
+extends Resource
+
+@export var attack_damage: float = 0.0
