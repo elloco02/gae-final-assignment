@@ -3,7 +3,6 @@ class_name Player
 extends CharacterBody2D
 
 @export var speed: float = 300.0
-
 @onready var gun: Gun = $Gun
 
 var stat_upgrades: Array[BasePlayerUpgrade] = []

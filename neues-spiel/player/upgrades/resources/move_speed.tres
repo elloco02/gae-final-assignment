@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MoveSpeedUpgrade" load_steps=2 format=3 uid="uid://cwndj3f3hlr8x"]
 
-[ext_resource type="Script" uid="uid://bicj2v00174sf" path="res://player/upgrades/move_speed_upgrade.gd" id="1_ber8d"]
+[ext_resource type="Script" uid="uid://bicj2v00174sf" path="res://player/upgrades/speed_upgrade.gd" id="1_ber8d"]
 
 [resource]
 script = ExtResource("1_ber8d")
