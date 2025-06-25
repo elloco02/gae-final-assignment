@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpeedBulletStrategy" load_steps=2 format=3 uid="uid://b8ayf57voktsm"]
+
+[ext_resource type="Script" uid="uid://de6r2fhdp6qkq" path="res://weapon/bullet_upgrades/speed_bullet_upgrade.gd" id="1_0y1ic"]
+
+[resource]
+script = ExtResource("1_0y1ic")
+speed_increase = 1.5
+upgrade_text = "Bulletspeed x1.5"
+metadata/_custom_type_script = "uid://de6r2fhdp6qkq"

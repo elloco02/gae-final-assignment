@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba2lrrqqyokcq"]
+
+[ext_resource type="PackedScene" uid="uid://o21c43cq4vbk" path="res://enemies/mummy/mummy.tscn" id="1_h7jsh"]
+[ext_resource type="PackedScene" uid="uid://bp3h1p0md3kss" path="res://enemies/scorpion/scorpion.tscn" id="2_ukaqn"]
+[ext_resource type="PackedScene" uid="uid://b7ju42r1ol66n" path="res://enemies/bat/bat.tscn" id="3_lkbjl"]
+[ext_resource type="PackedScene" uid="uid://cmbuf0drv1452" path="res://enemies/cactus_dude/cactus_dude.tscn" id="4_6ufl8"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Mummy" parent="." instance=ExtResource("1_h7jsh")]
+
+[node name="Scorpion" parent="." instance=ExtResource("2_ukaqn")]
+
+[node name="Bat" parent="." instance=ExtResource("3_lkbjl")]
+
+[node name="CactusDude" parent="." instance=ExtResource("4_6ufl8")]

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://doqqe02jv0c2n"]
-
-[ext_resource type="Script" uid="uid://r3qkvbjrn315" path="res://scripts/enemies/enemy_melee_attack.gd" id="1_7v3pr"]
-
-[node name="EnemyMeleeAttack" type="Area2D"]
-collision_layer = 12
-script = ExtResource("1_7v3pr")
-metadata/_custom_type_script = "uid://r3qkvbjrn315"
