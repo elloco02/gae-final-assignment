@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://kgt2btxicblq"]
+
+[ext_resource type="Script" uid="uid://blhk0sufdbsy" path="res://enemies/enemy_attack_projectile.gd" id="1_wxvpr"]
+[ext_resource type="Resource" uid="uid://645dac2ptsoo" path="res://enemies/cactus_dude/cactus_dude_attack.tres" id="2_k0p1h"]
+[ext_resource type="Texture2D" uid="uid://blg4n3bkkprp0" path="res://icon.svg" id="2_p8vc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0p1h"]
+size = Vector2(24, 6)
+
+[node name="EnemyAttackProjectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 17
+script = ExtResource("1_wxvpr")
+attack = ExtResource("2_k0p1h")
+projectile_speed = 50.0
+metadata/_custom_type_script = "uid://blhk0sufdbsy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k0p1h")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -1.19209e-07)
+scale = Vector2(0.1875, 0.046875)
+texture = ExtResource("2_p8vc4")
