@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btl5kuj3qlat3"]
+
+[ext_resource type="Script" uid="uid://blhk0sufdbsy" path="res://enemies/enemy_attack_projectile.gd" id="1_63yyq"]
+
+[node name="EnemyAttackProjectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 17
+script = ExtResource("1_63yyq")
+metadata/_custom_type_script = "uid://blhk0sufdbsy"

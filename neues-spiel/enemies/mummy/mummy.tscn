@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://o21c43cq4vbk"]
+
+[ext_resource type="Script" uid="uid://bnvjg77xc5tkh" path="res://enemies/mummy/mummy.gd" id="1_chcyj"]
+[ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="2_6p3d2"]
+[ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="3_ifpek"]
+[ext_resource type="Script" uid="uid://wkapnnnb6v74" path="res://enemies/enemy_follow_state.gd" id="4_0tcs6"]
+[ext_resource type="Script" uid="uid://dsh2u5okbvv0s" path="res://enemies/statemachine.gd" id="4_ifpek"]
+[ext_resource type="Script" uid="uid://qjjnwwgx0533" path="res://enemies/enemy_attack_state.gd" id="5_7t3o7"]
+[ext_resource type="PackedScene" uid="uid://doqqe02jv0c2n" path="res://enemies/enemy_melee_attack.tscn" id="7_1p1p6"]
+[ext_resource type="Resource" uid="uid://clf63wch0u3" path="res://enemies/mummy/mummy_attack.tres" id="8_1p1p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t3o7"]
+size = Vector2(8, 8)
+
+[sub_resource type="Gradient" id="Gradient_0tcs6"]
+offsets = PackedFloat32Array(0.789157)
+colors = PackedColorArray(0.650128, 0.650128, 0.650128, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7t3o7"]
+gradient = SubResource("Gradient_0tcs6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bii4v"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p1p6"]
+size = Vector2(36, 36)
+
+[node name="Mummy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_chcyj")
+speed = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7t3o7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.17233e-07)
+scale = Vector2(0.032, 8)
+texture = SubResource("GradientTexture1D_7t3o7")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_ifpek")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_6p3d2")]
+collision_layer = 4
+collision_mask = 0
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_bii4v")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_ifpek")
+initial_state = NodePath("EnemyFollowState")
+metadata/_custom_type_script = "uid://dsh2u5okbvv0s"
+
+[node name="EnemyAttackState" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "attack", "follow_state")]
+script = ExtResource("5_7t3o7")
+enemy = NodePath("../..")
+attack = NodePath("../../EnemyMeleeAttack")
+follow_state = NodePath("../EnemyFollowState")
+metadata/_custom_type_script = "uid://qjjnwwgx0533"
+
+[node name="EnemyFollowState" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "attack_state")]
+script = ExtResource("4_0tcs6")
+enemy = NodePath("../..")
+attack_range = 20.0
+attack_state = NodePath("../EnemyAttackState")
+metadata/_custom_type_script = "uid://wkapnnnb6v74"
+
+[node name="EnemyMeleeAttack" parent="." instance=ExtResource("7_1p1p6")]
+attack_data = ExtResource("8_1p1p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyMeleeAttack"]
+shape = SubResource("RectangleShape2D_1p1p6")
