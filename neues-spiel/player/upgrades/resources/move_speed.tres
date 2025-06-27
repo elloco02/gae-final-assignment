@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ber8d")
-speed_increase = 50.0
+speed_increase = 50
 upgrade_text = "+50 MoveSpeed"
 metadata/_custom_type_script = "uid://bicj2v00174sf"

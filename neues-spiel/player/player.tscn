@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://coji56ys8lkjd"]
 
 [ext_resource type="Script" uid="uid://bk7bumy0nkakd" path="res://player/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://blg4n3bkkprp0" path="res://icon.svg" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://b6u7o0ecj7fx6" path="res://weapon/gun.tscn" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="4_qlg0r"]
+[ext_resource type="SpriteFrames" uid="uid://c8r0uhac6s777" path="res://player/upgrades/resources/player_animation_frames.tres" id="5_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="5_tuyoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb0m6"]
@@ -16,10 +16,10 @@ size = Vector2(40, 40)
 collision_mask = 16
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1.78814e-07)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("2_qhqgy")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+sprite_frames = ExtResource("5_qjkh3")
+animation = &"shoot_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tb0m6")

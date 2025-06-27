@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://r8w76u6336r6"]
+[gd_scene load_steps=4 format=3 uid="uid://r8w76u6336r6"]
 
 [ext_resource type="Script" uid="uid://uhcel7pv5htu" path="res://weapon/bullet.gd" id="1_mkf8s"]
+[ext_resource type="Texture2D" uid="uid://cn4m4cd6brdvx" path="res://assets/player/character-Sheet.png" id="2_ge33b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]
 size = Vector2(16, 16)
@@ -9,6 +10,7 @@ size = Vector2(16, 16)
 script = ExtResource("1_mkf8s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27,5 +29,11 @@ shape = SubResource("RectangleShape2D_mkf8s")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(4.76837e-07, 4.76837e-07)
 scale = Vector2(2.4, 2.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ge33b")
+region_enabled = true
+region_rect = Rect2(1280, 0, 32, 32)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

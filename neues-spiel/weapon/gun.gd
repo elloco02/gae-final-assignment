@@ -54,6 +54,10 @@ func shoot_bullet() -> void:
 	# do nothing if shoot_timer is running
 	if shoot_timer.time_left > 0:
 		return
+		
+	var shoot_direction = Vector2.RIGHT.rotated(rotation)
+	player.play_shoot_animation(shoot_direction)
+	
 	# shoot bullet with all of its upgrades
 	current_ammo -= 1
 	var bullet_instance: Bullet = bullet.instantiate()
