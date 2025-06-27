@@ -2,13 +2,10 @@ class_name Bullet
 extends CharacterBody2D
 
 @export var hitbox_component: HitboxComponent
-
 @export var speed: float = 350.0
 @export var damage: float = 5.0
 @export var max_pierce: int = 1
-
 var current_pierce_count: int = 0
-
 
 func _ready():
 	if hitbox_component:
