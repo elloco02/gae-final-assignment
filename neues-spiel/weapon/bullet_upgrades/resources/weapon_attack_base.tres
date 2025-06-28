@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponAttack" load_steps=2 format=3 uid="uid://d17m2o7at7ee4"]
+
+[ext_resource type="Script" uid="uid://bgoj6wn4ssbe" path="res://weapon/bullet_upgrades/weapon_attack.gd" id="1_ujkea"]
+
+[resource]
+script = ExtResource("1_ujkea")
+damage = 1.0
+max_pierce = 1
+speed = 300.0
+reload_time = 1.0
+current_ammo = 0
+max_ammo = 10
+fire_rate = 0.0
+maximum_fire_rate = 1.0
+metadata/_custom_type_script = "uid://bgoj6wn4ssbe"

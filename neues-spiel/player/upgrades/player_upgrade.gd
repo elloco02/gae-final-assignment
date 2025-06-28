@@ -1,3 +1,7 @@
+# war zum testen als aufsammelbares Item in der map, kann (zusammen mit
+# "player_upgrade.tscn" gelöscht werden, wenn wir keine aufsammelbaren Items
+# haben wollen
+
 @tool
 extends Area2D
 

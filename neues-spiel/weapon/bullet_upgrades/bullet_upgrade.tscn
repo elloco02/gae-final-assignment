@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://clu7d7ap7byie"]
 
 [ext_resource type="Script" uid="uid://ceoa18bgsbrrj" path="res://weapon/bullet_upgrades/bullet_upgrade.gd" id="1_xsw34"]
-[ext_resource type="Script" uid="uid://bj6gupwuqq5rh" path="res://weapon/bullet_upgrades/base_bullet_upgrade.gd" id="2_mwfbx"]
+[ext_resource type="Script" uid="uid://bj6gupwuqq5rh" path="res://weapon/bullet_upgrades/base_weapon_upgrade.gd" id="2_mwfbx"]
 
 [sub_resource type="Resource" id="Resource_aje1s"]
 script = ExtResource("2_mwfbx")
