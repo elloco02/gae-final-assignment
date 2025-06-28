@@ -17,7 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TransitionScreen="*res://utility/transition/transition_screen.tscn"
+ScoreManager="*res://utility/globals/score_manager.gd"
+SceneManager="*res://utility/globals/scene_manager.gd"
+GameManager="*res://utility/globals/game_manager.gd"
 
 [global_group]
 

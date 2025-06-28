@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm7scsrhl5veb"]
+
+[ext_resource type="Script" uid="uid://cop6ipvbbkwru" path="res://main_menu/frame/frame.gd" id="1_0pslg"]
+
+[sub_resource type="Theme" id="Theme_6oqjl"]
+
+[sub_resource type="Theme" id="Theme_x3q1t"]
+
+[sub_resource type="Theme" id="Theme_2ft63"]
+
+[sub_resource type="Theme" id="Theme_lwad5"]
+
+[node name="Frame" type="ColorRect"]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.478431)
+script = ExtResource("1_0pslg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+self_modulate = Color(0.31, 0.31, 0.31, 1)
+layout_mode = 2
+region_rect = Rect2(107, 83, 5, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6oqjl")
+alignment = 1
+
+[node name="FrameLabel" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = SubResource("Theme_x3q1t")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 0
+text = "Credits"
+
+[node name="CloseButton" type="Button" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2ft63")
+text = "Close"
+
+[node name="ContentContainer" type="ScrollContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_lwad5")
+
+[connection signal="pressed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

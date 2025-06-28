@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv22e6quu1tqp"]
+
+[ext_resource type="Script" uid="uid://drldw3332dhmy" path="res://main_menu/frame/frame_button.gd" id="1_qq5xk"]
+
+[node name="FrameButton" type="Button"]
+offset_right = 125.0
+offset_bottom = 43.0
+text = "Button"
+script = ExtResource("1_qq5xk")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

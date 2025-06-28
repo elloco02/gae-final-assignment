@@ -6,6 +6,7 @@ extends Node2D
 
 signal health_changed(current_health: float, max_health: float)
 const MAIN_MENU_PATH := "res://main_menu/main_menu.tscn"
+
 var health: float
 
 func _ready() -> void:
@@ -33,8 +34,6 @@ func _emit_if_player() -> void:
 
 func _die() -> void:
 	if get_parent() is Player:
-		TransitionScreen.transition()
-		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file(MAIN_MENU_PATH)
+		GameManager.end_game()	
 	else:
 		get_parent().queue_free()
