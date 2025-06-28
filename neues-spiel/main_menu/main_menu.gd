@@ -8,4 +8,6 @@ func _ready() -> void:
 	start_button.pressed.connect(_on_start_button_pressed)
 
 func _on_start_button_pressed() -> void:
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_packed(game_level)
