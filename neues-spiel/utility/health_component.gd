@@ -1,21 +1,43 @@
 class_name HealthComponent
 extends Node2D
 
-@export var max_health: float = 1.0
+@export var max_health: float = 100.0
+@export var health_regeneration: float = 2.0
+
+signal health_changed(current_health: float, max_health: float)
+const MAIN_MENU_PATH := "res://main_menu/main_menu.tscn"
 
 var health: float
 
 signal on_death
 
-# Called when the node enters the scene tree for the first time.
+signal on_death
+
 func _ready() -> void:
-	self.health = self.max_health
+	health = max_health
+	_emit_if_player()
 
-# take damage from an attack
 func damage(attack: Attack) -> void:
-	self.health -= attack.attack_damage
+	health = max(health - attack.attack_damage, 0.0)
+	_emit_if_player()
 
-	# death
-	if self.health <= 0:
-		on_death.emit()
+	if health <= 0.0:
+		_die()
+
+func heal(amount: float) -> void:
+	health = min(health + amount, max_health)
+	_emit_if_player()
+
+func regenerate() -> void:
+	health = min(health + health_regeneration, max_health)
+	_emit_if_player()
+
+func _emit_if_player() -> void:
+	if get_parent() is Player:
+		emit_signal("health_changed", health, max_health)
+
+func _die() -> void:
+	if get_parent() is Player:
+		GameManager.end_game()
+	else:
 		get_parent().queue_free()

@@ -15,6 +15,12 @@ run/main_scene="uid://cfd45waamnwgv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ScoreManager="*res://utility/globals/score_manager.gd"
+SceneManager="*res://utility/globals/scene_manager.gd"
+GameManager="*res://utility/globals/game_manager.gd"
+
 [global_group]
 
 Players="Collection of players"

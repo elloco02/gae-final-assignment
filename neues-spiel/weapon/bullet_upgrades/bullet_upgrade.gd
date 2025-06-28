@@ -1,9 +1,12 @@
+# war zum testen als aufsammelbares Item in der map, kann (zusammen mit
+# "bullet_upgrade.tscn" gelöscht werden, wenn wir keine aufsammelbaren Items
+# haben wollen
 @tool
 extends Area2D
 
 @export var upgrade_label: Label
 #@export var sprite : Sprite2D
-@export var bullet_upgrade: BaseBulletUpgrade:
+@export var bullet_upgrade: BaseWeaponUpgrade:
 	set(val):
 		bullet_upgrade = val
 		needs_update = true
