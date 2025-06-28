@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cmbuf0drv1452"]
 
 [ext_resource type="Script" uid="uid://dqd28sbxnlm6b" path="res://enemies/cactus_dude/cactus_dude.gd" id="1_7pew1"]
-[ext_resource type="SpriteFrames" uid="uid://cbbo6ruwqhybi" path="res://enemies/cactus_dude/kaktus_dude_animation_frames.tres" id="2_fu10q"]
+[ext_resource type="SpriteFrames" uid="uid://bdg3khylrujd5" path="res://assets/cactus_man/cactus_dude_animation_frames.tres" id="2_fu10q"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_v75ud"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="3_i7bif"]
 [ext_resource type="Script" uid="uid://dsh2u5okbvv0s" path="res://enemies/statemachine.gd" id="3_v75ud"]

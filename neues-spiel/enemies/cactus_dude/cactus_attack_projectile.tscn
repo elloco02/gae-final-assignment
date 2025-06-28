@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blhk0sufdbsy" path="res://enemies/enemy_attack_projectile.gd" id="1_wxvpr"]
 [ext_resource type="Resource" uid="uid://645dac2ptsoo" path="res://enemies/cactus_dude/cactus_dude_attack.tres" id="2_k0p1h"]
-[ext_resource type="Texture2D" uid="uid://cbvg18c8q10vy" path="res://assets/kaktus_man/kaktus_man-Sheet.png" id="3_7il5w"]
+[ext_resource type="Texture2D" uid="uid://cbvg18c8q10vy" path="res://assets/cactus_man/cactus_man-Sheet.png" id="3_7il5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0p1h"]
 size = Vector2(24, 6)
