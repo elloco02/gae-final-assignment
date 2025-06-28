@@ -6,39 +6,37 @@ extends Control
 @onready var weapon: Gun = player.gun
 
 func _ready():
-	%ResumeButton.pressed.connect(resume)
-	# create a button for each upgrade in upgrade_list and add it to the tree
-	var upgrades = upgrade_list.player_upgrades
-	for upgrade in upgrades:
+	%NextWaveButton.pressed.connect(start_next_wave)
+	# create and add a button for 2 random upgrades from the upgrade_list
+	var combined_upgrades = upgrade_list.weapon_upgrades + upgrade_list.player_upgrades
+	for i in range(2):
+		var random_index = randi_range(0, combined_upgrades.size() - 1)
 		var button = Button.new()
+		var upgrade = combined_upgrades[random_index]
+		print("random uprade index: ", random_index)
 		button.text = "%s" % [upgrade.upgrade_text]
-		button.pressed.connect(Callable(add_upgrade).bind(upgrade))
-		vbox.add_child(button)
-	upgrades = upgrade_list.weapon_upgrades
-	for upgrade in upgrades:
-		var button = Button.new()
-		button.text = "%s" % [upgrade.upgrade_text]
-		button.pressed.connect(Callable(add_upgrade).bind(upgrade))
+		button.pressed.connect(Callable(add_upgrade).bind(upgrade, button))
 		vbox.add_child(button)
 
 # add upgrade to stat_upgrades in player.gd
-func add_upgrade(upgrade):
-	if upgrade is BasePlayerUpgrade:
-		if upgrade not in player.stat_upgrades:
-			player.stat_upgrades.append(upgrade)
-			print("Player Upgrade added")
-		else:
-			print("Player Upgrade already added")
-	elif upgrade is BaseWeaponUpgrade:
-		if upgrade not in weapon.bullet_upgrades:
-			weapon.bullet_upgrades.append(upgrade)
-			print("Weapon Upgrade added")
-		else:
-			print("Weapon Upgrade already added")
+func add_upgrade(upgrade, button: Button):
+	match upgrade:
+		BasePlayerUpgrade:
+			if upgrade not in player.stat_upgrades:
+				player.stat_upgrades.append(upgrade)
+				print("Player Upgrade added")
+			else:
+				print("Player Upgrade already added")
+		BaseWeaponUpgrade:
+			if upgrade not in weapon.bullet_upgrades:
+				weapon.bullet_upgrades.append(upgrade)
+				print("Weapon Upgrade added")
+			else:
+				print("Weapon Upgrade already added")
+	button.disabled = true
 
-# resume game when button pressed and apply upgrades to player (TEMPORARY SOLUTION!!!)
-func resume() -> void:
+# start next wave
+func start_next_wave() -> void:
 	get_tree().paused = false
-	%UpgradeMenu.visible = not %UpgradeMenu.visible
-	player.temp_apply_upgrades()
-	weapon.temp_apply_upgrades()
+	self.visible = not self.visible
+	#WaveManager.startWave() # uncomment when wave management is implemented

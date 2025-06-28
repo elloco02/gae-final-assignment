@@ -10,6 +10,11 @@ extends Node2D
 var bullet = preload("res://weapon/bullet.tscn")
 var bullet_upgrades: Array[BaseWeaponUpgrade] = []
 
+func _init() -> void:
+	# loop over all stat upgrades and apply
+	for upgrade in bullet_upgrades:
+		upgrade.apply_upgrade(weapon_attack)
+
 func _ready() -> void:
 	# connect reload_timer signal to refill_ammo function, also call it at the start
 	reload_timer.timeout.connect(refill_ammo)
@@ -74,8 +79,3 @@ func refill_ammo() -> void:
 
 func on_ammo_change(amount: String) -> void:
 	ammo_label.text = amount
-
-# TEMPORARY SOLUTION UNTIL WAVE MANAGEMENT IS IMPLEMENTED
-func temp_apply_upgrades() -> void:
-	for upgrade in bullet_upgrades:
-		upgrade.apply_upgrade(weapon_attack)
