@@ -32,8 +32,8 @@ player = NodePath("../../Player")
 visible = false
 
 [node name="Bat" parent="." instance=ExtResource("5_6utho")]
+visible = false
 position = Vector2(131, 0)
 
 [node name="Scorpion" parent="." instance=ExtResource("6_85qjo")]
-visible = false
 position = Vector2(474, 0)

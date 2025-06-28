@@ -153,7 +153,7 @@ script = ExtResource("1_rt4uy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l2dbv")
-animation = &"walk_up"
+animation = &"attack_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4k4o5")
@@ -176,6 +176,7 @@ metadata/_custom_type_script = "uid://dsh2u5okbvv0s"
 [node name="EnemyAttackState" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy", "attack", "follow_state")]
 script = ExtResource("4_18mee")
 enemy = NodePath("../..")
+attack_duration = 0.4
 attack = NodePath("../../EnemyMeleeAttack")
 follow_state = NodePath("../EnemyFollowState")
 metadata/_custom_type_script = "uid://qjjnwwgx0533"
