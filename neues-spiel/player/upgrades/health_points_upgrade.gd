@@ -8,4 +8,4 @@ func _init() -> void:
 
 # increases max_health for the player permanently
 func apply_upgrade(player: Player):
-	player.max_health += max_health_increase
+	player.health_component.max_health += max_health_increase
