@@ -33,3 +33,5 @@ collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("RectangleShape2D_qlg0r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
