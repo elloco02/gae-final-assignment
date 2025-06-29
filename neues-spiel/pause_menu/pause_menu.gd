@@ -5,15 +5,19 @@ extends Control
 func _ready() -> void:
 	%ResumeButton.pressed.connect(resume)
 	%MainMenu.pressed.connect(main_menu)
+	GameManager.on_state_change.connect(open_pause_menu)
+
+func open_pause_menu(value: GameManager.GAME_STATES) -> void:
+	self.visible = GameManager.GAME_STATES.PAUSEMENU == value
+
+
 # resume game
 func resume() -> void:
-	get_tree().paused = false
-	self.visible = not self.visible
+	GameManager.game_state = GameManager.GAME_STATES.RUNNING
 
 
 func main_menu() -> void:
 	ScoreManager.reset_score()
-	get_tree().paused = false
-	self.visible = false
+	resume()
 	var main_menu_scene = load("res://main_menu/main_menu.tscn")
 	SceneManager.change_scene_to(main_menu_scene)
