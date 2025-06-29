@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=8 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="TileSet" uid="uid://bmbgil25l7jml" path="res://assets/Tilemap/tile_set.tres" id="1_7lyf1"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_7lyf1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmbuf0drv1452" path="res://enemies/cactus_dude/cactus_dude.tscn" id="4_7lyf1"]
 [ext_resource type="PackedScene" uid="uid://b7ju42r1ol66n" path="res://enemies/bat/bat.tscn" id="5_6utho"]
 [ext_resource type="PackedScene" uid="uid://bp3h1p0md3kss" path="res://enemies/scorpion/scorpion.tscn" id="6_85qjo"]
+[ext_resource type="PackedScene" uid="uid://o21c43cq4vbk" path="res://enemies/mummy/mummy.tscn" id="7_ba6om"]
 
 [node name="Level" type="Node2D"]
 
@@ -36,4 +37,7 @@ visible = false
 position = Vector2(131, 0)
 
 [node name="Scorpion" parent="." instance=ExtResource("6_85qjo")]
+visible = false
 position = Vector2(474, 0)
+
+[node name="Mummy" parent="." instance=ExtResource("7_ba6om")]

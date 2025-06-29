@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://o21c43cq4vbk"]
+[gd_scene load_steps=13 format=3 uid="uid://o21c43cq4vbk"]
 
 [ext_resource type="Script" uid="uid://bnvjg77xc5tkh" path="res://enemies/mummy/mummy.gd" id="1_chcyj"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="2_6p3d2"]
+[ext_resource type="SpriteFrames" uid="uid://dsuh10038dvim" path="res://assets/mummy/new_sprite_frames.tres" id="2_bqawh"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="3_ifpek"]
 [ext_resource type="Script" uid="uid://wkapnnnb6v74" path="res://enemies/enemy_follow_state.gd" id="4_0tcs6"]
 [ext_resource type="Script" uid="uid://dsh2u5okbvv0s" path="res://enemies/statemachine.gd" id="4_ifpek"]
@@ -11,13 +12,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t3o7"]
 size = Vector2(8, 8)
-
-[sub_resource type="Gradient" id="Gradient_0tcs6"]
-offsets = PackedFloat32Array(0.789157)
-colors = PackedColorArray(0.650128, 0.650128, 0.650128, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_7t3o7"]
-gradient = SubResource("Gradient_0tcs6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bii4v"]
 size = Vector2(8, 8)
@@ -31,13 +25,12 @@ collision_mask = 16
 script = ExtResource("1_chcyj")
 speed = 50
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_bqawh")
+animation = &"attack_up"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7t3o7")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(0.032, 8)
-texture = SubResource("GradientTexture1D_7t3o7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_ifpek")]
 
