@@ -7,9 +7,11 @@ extends CharacterBody2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var gun: Gun = $Gun
 @onready var health_regeneration_time: float = 5.0
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var stat_upgrades: Array[BasePlayerUpgrade] = []
-
+var is_shooting = false
+var last_direction: String = "down"
 
 func _init() -> void:
 	# loop over all stat upgrades and apply
@@ -24,12 +26,13 @@ func _ready() -> void:
 	health_component.health_changed.connect(update_health_bar)
 	start_regeneration()
 	take_damage()
+	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 
 func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()
-
+	update_animation()
 
 # get input direction from key press
 func get_input() -> void:
@@ -73,3 +76,39 @@ func take_damage() -> void:
 	var attack := Attack.new()
 	attack.attack_damage = 10.0
 	health_component.damage(attack)
+
+func update_animation() -> void:
+	if is_shooting:
+		return
+
+	var is_moving := velocity.length() > 0.1
+	var direction := get_direction_name(velocity)
+
+	if is_moving:
+		last_direction = direction
+
+	var anim_name := ("walk_" if is_moving else "idle_") + last_direction
+
+	if animated_sprite.animation != anim_name:
+		animated_sprite.play(anim_name)
+
+func get_direction_name(vec: Vector2) -> String:
+	if abs(vec.x) > abs(vec.y):
+		return "right" if vec.x > 0 else "left"
+	else:
+		return "down" if vec.y > 0 else "up"
+
+func play_shoot_animation(direction: Vector2) -> void:
+	if is_shooting:
+		return
+
+	is_shooting = true
+	var dir_name = get_direction_name(direction)
+	animated_sprite.play("shoot_" + dir_name)
+
+func _on_animation_finished():
+	print("Finished anim:", animated_sprite.animation)
+	if is_shooting:
+		is_shooting = false
+		var anim_name := ("walk_" if velocity.length() > 0.1 else "idle_") + last_direction
+		animated_sprite.play(anim_name)
