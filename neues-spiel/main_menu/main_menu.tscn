@@ -68,6 +68,7 @@ text = "Credits
 [node name="Frame" parent="CanvasLayer" instance=ExtResource("2_3shxk")]
 
 [node name="CreditsContainer" parent="CanvasLayer/Frame" instance=ExtResource("2_d3a7t")]
+layout_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ScoreboardButton" to="." method="_on_scoreboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
