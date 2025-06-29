@@ -10,6 +10,7 @@ extends Node2D
 var bullet = preload("res://weapon/bullet.tscn")
 var bullet_upgrades: Array[BaseWeaponUpgrade] = []
 
+
 func _init() -> void:
 	# loop over all stat upgrades and apply
 	for upgrade in bullet_upgrades:
@@ -24,6 +25,7 @@ func _ready() -> void:
 	# loop over all bullet upgrades and apply
 	for upgrade in bullet_upgrades:
 		upgrade.apply_upgrade(weapon_attack)
+
 
 func _physics_process(_delta: float) -> void:
 	# rotate gun towards mouse position
@@ -51,6 +53,7 @@ func _physics_process(_delta: float) -> void:
 		print("Reload")
 		reload_ammo()
 
+
 # shoot a bullet if gun is ready to fire again
 func shoot_bullet() -> void:
 	# do nothing if shoot_timer is running
@@ -67,15 +70,18 @@ func shoot_bullet() -> void:
 	# start timer for fire rate, the higher the fire_rate, the faster it shoots
 	shoot_timer.start(weapon_attack.maximum_fire_rate - weapon_attack.fire_rate)
 
+
 # reload the ammo visually
 func reload_ammo() -> void:
 	# start reload timer
 	reload_timer.start(weapon_attack.reload_time)
 	# TODO: add some animation for the reload process
 
+
 # fills the current_ammo after reload_timer finishes and sends a signal
 func refill_ammo() -> void:
 	weapon_attack.current_ammo = weapon_attack.max_ammo
+
 
 func on_ammo_change(amount: String) -> void:
 	ammo_label.text = amount
