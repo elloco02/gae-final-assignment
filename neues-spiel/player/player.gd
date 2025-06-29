@@ -20,7 +20,7 @@ func _ready() -> void:
 	health_component.health_changed.connect(update_health_bar)
 	update_health_bar(health_component.health, health_component.max_health)
 	start_regeneration()
-	# take_damage()
+	take_damage()
 
 func _physics_process(_delta: float) -> void:
 	get_input()

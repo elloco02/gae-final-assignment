@@ -1,0 +1,82 @@
+{
+	"intro": "This is the sandbox to test the template elements.",
+	
+	"roles": [
+		{
+			"role": "Code",
+			"creators": [
+				{
+					"name": "Eren Saglam",
+					"url": "https://sepia2023.itch.io",
+					
+				},
+				{
+					"name": "Jonas Wächter",
+					"url": "https://sepia2023.itch.io",
+					
+				},
+				{
+					"name": "Filip Cavar",
+					"url": "https://sepia2023.itch.io",
+					
+				},
+				{
+					"name": "Vincent Reinhold",
+					"url": "https://sepia2023.itch.io",
+					
+				},
+			]
+		},
+	],
+	
+	"thanks": "",
+	
+	"categories": [
+		{
+			"title": "Third Party Assets",
+			"items": [
+				{
+					"title": "Background Image",
+					"name": "TBD",
+					"creator": "TBD",
+					"url": "TBD",
+					"license": "Free Asset on itch.io",
+				},
+				{
+					"title": "Menu Music",
+					"name": "TBD",
+					"creator": "TBD",
+					"url": "TBD",
+					"license": "TBD",
+				},
+			]
+		},
+		{
+			"title": "Software",
+			"items": [
+				{
+					"title": "Game Engine",
+					"name": "Godot Engine",
+					"creator": "",
+					"url": "https://godotengine.org/",
+					"license": "MIT",
+					"license_url": "https://godotengine.org/license/"
+				},
+				{
+					"title": "Credit Screen Template",
+					"name": "Credit Screen Template",
+					"creator": "Prof. Dr. rer. nat. Kai Eckert",
+					"url": "http://www.kaiec.de/",
+				},
+				{
+					"title": "Music Creation Application",
+					"name": "1BitDragon",
+					"creator": "1BitDragon",
+					"url": "https://1bitdragon.com/",
+					"license": "Steam",
+					"license_url": "https://store.steampowered.com/app/1864790/1BITDRAGON/"
+				}
+			]
+		}
+	]
+}

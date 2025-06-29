@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfd45waamnwgv"]
+[gd_scene load_steps=4 format=3 uid="uid://cfd45waamnwgv"]
 
 [ext_resource type="Script" uid="uid://bf2agptph48ka" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="PackedScene" uid="uid://dm7scsrhl5veb" path="res://main_menu/frame/frame.tscn" id="2_3shxk"]
+[ext_resource type="PackedScene" uid="uid://dd5vrwfmxvrk8" path="res://main_menu/credits/credit_screen.tscn" id="2_d3a7t"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,8 +13,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oa53l")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,30 +26,48 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Separator" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "GAME TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 text = "Start Game"
+
+[node name="ScoreboardButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "Scoreboard"
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "Credits
+"
+
+[node name="Frame" parent="CanvasLayer" instance=ExtResource("2_3shxk")]
+
+[node name="CreditsContainer" parent="CanvasLayer/Frame" instance=ExtResource("2_d3a7t")]
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ScoreboardButton" to="." method="_on_scoreboard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
