@@ -33,6 +33,7 @@ animation = &"walk_up"
 shape = SubResource("RectangleShape2D_7t3o7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_ifpek")]
+max_health = null
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_6p3d2")]
 collision_layer = 4

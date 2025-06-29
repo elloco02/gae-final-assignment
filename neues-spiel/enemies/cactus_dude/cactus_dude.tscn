@@ -33,6 +33,7 @@ sprite_frames = ExtResource("2_fu10q")
 animation = &"attack_right"
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_v75ud")]
+max_health = null
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_i7bif")]
 collision_layer = 4

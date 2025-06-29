@@ -32,6 +32,7 @@ animation = &"attack_down"
 shape = SubResource("RectangleShape2D_anpvi")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_eoj0c")]
+max_health = null
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_m4trt")]
 collision_layer = 4
