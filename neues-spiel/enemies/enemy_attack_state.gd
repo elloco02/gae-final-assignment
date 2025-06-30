@@ -14,7 +14,7 @@ func enter():
 	enemy.velocity = Vector2.ZERO
 	attack.attack()
 	attack_timer = attack_duration	
-	AudioManager.play_enemy_attack_sound(enemy)
+	AudioManager.create_2d_audio_at_location(enemy.global_position, enemy.sound_type)
 
 func exit():
 	pass

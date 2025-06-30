@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://utility/score_label.gd" id="2_6utho"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_7lyf1"]
 [ext_resource type="PackedScene" uid="uid://bn2ss744xne43" path="res://upgrade_menu/upgrade_menu.tscn" id="3_6utho"]
-[ext_resource type="PackedScene" uid="uid://b7ju42r1ol66n" path="res://enemies/bat/bat.tscn" id="5_6utho"]
-[ext_resource type="PackedScene" uid="uid://cmbuf0drv1452" path="res://enemies/cactus_dude/cactus_dude.tscn" id="6_85qjo"]
+[ext_resource type="PackedScene" uid="uid://o21c43cq4vbk" path="res://enemies/mummy/mummy.tscn" id="6_85qjo"]
+[ext_resource type="PackedScene" uid="uid://bp3h1p0md3kss" path="res://enemies/scorpion/scorpion.tscn" id="7_ba6om"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_7s3b7")
@@ -188,6 +188,6 @@ tile_set = SubResource("TileSet_gldc4")
 [node name="Player" parent="." groups=["Players"] instance=ExtResource("2_7lyf1")]
 position = Vector2(576, 320)
 
-[node name="Bat" parent="." instance=ExtResource("5_6utho")]
+[node name="Scorpion" parent="." instance=ExtResource("7_ba6om")]
 
-[node name="CactusDude" parent="." instance=ExtResource("6_85qjo")]
+[node name="Mummy" parent="." instance=ExtResource("6_85qjo")]

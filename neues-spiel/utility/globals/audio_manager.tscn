@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl2s53esa0l8g"]
+[gd_scene load_steps=21 format=3 uid="uid://bl2s53esa0l8g"]
 
 [ext_resource type="Script" uid="uid://bpegpyi4wjuyh" path="res://sfx/sfx_manager/audio_manager.gd" id="1_vepci"]
 [ext_resource type="Script" uid="uid://dh08cv6sgf04d" path="res://sfx/sfx_manager/soundeffect_settings.gd" id="2_8msbp"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://brnqjp00klrad" path="res://sfx/shot.WAV" id="7_sl6vk"]
 [ext_resource type="AudioStream" uid="uid://distp7w6rrjxw" path="res://sfx/reload.WAV" id="8_ith7a"]
 [ext_resource type="AudioStream" uid="uid://bsskbxghjlbjq" path="res://sfx/heal.mp3" id="9_f13y8"]
+[ext_resource type="AudioStream" uid="uid://ckt5uuwugxh1j" path="res://sfx/scorpion_sting.WAV" id="10_84m0s"]
+[ext_resource type="AudioStream" uid="uid://d3tydqielnq4b" path="res://sfx/laserShoot.wav" id="11_ya0ud"]
 
 [sub_resource type="Resource" id="Resource_rnyec"]
 script = ExtResource("2_8msbp")
@@ -66,6 +68,22 @@ volume = 0
 bus = "Master"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
+[sub_resource type="Resource" id="Resource_tygts"]
+script = ExtResource("2_8msbp")
+type = 2
+sound_effect = ExtResource("10_84m0s")
+volume = 0
+bus = "Master"
+metadata/_custom_type_script = "uid://dh08cv6sgf04d"
+
+[sub_resource type="Resource" id="Resource_0ojct"]
+script = ExtResource("2_8msbp")
+type = 3
+sound_effect = ExtResource("11_ya0ud")
+volume = 0
+bus = "Master"
+metadata/_custom_type_script = "uid://dh08cv6sgf04d"
+
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_vepci")
-sound_effect_settings = Array[ExtResource("2_8msbp")]([SubResource("Resource_rnyec"), SubResource("Resource_8msbp"), SubResource("Resource_ith7a"), SubResource("Resource_f13y8"), SubResource("Resource_qkm4v"), SubResource("Resource_84m0s"), SubResource("Resource_ya0ud")])
+sound_effect_settings = Array[ExtResource("2_8msbp")]([SubResource("Resource_rnyec"), SubResource("Resource_8msbp"), SubResource("Resource_ith7a"), SubResource("Resource_f13y8"), SubResource("Resource_qkm4v"), SubResource("Resource_84m0s"), SubResource("Resource_ya0ud"), SubResource("Resource_tygts"), SubResource("Resource_0ojct")])
