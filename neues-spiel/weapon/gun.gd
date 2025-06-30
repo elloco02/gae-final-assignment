@@ -51,6 +51,8 @@ func shoot_bullet() -> void:
 	# do nothing if shoot_timer is running
 	if shoot_timer.time_left > 0:
 		return
+	
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_ATTACK)
 	# create bullet with all of its upgrades
 	weapon_attack.current_ammo -= 1
 	var bullet_instance: Bullet = bullet.instantiate()
@@ -66,6 +68,7 @@ func shoot_bullet() -> void:
 func reload_ammo() -> void:
 	# start reload timer
 	reload_timer.start(weapon_attack.reload_time)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_RELOAD)
 	# TODO: add some animation for the reload process
 
 # fills the current_ammo after reload_timer finishes and sends a signal
