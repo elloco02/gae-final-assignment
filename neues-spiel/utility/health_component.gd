@@ -24,6 +24,9 @@ func damage(attack: Attack) -> void:
 		_die()
 
 func heal(amount: float) -> void:
+	if get_parent() is Player:
+		AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_HEAL)
+		
 	health = min(health + amount, max_health)
 	_emit_if_player()
 
