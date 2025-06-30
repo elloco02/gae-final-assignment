@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var speed: int = 200
 @export var health_component: HealthComponent
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	if not health_component:
@@ -15,3 +16,9 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
+
+func get_direction_name(vec: Vector2) -> String:
+	if abs(vec.x) > abs(vec.y):
+		return "right" if vec.x > 0 else "left"
+	else:
+		return "down" if vec.y > 0 else "up"
