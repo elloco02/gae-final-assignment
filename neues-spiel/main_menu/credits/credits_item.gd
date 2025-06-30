@@ -53,7 +53,6 @@ func _ready() -> void:
 	else:
 		license_button.visible = false
 
-func _process(delta: float) -> void:
 	if website_button.visible:
 		website_button.pressed.connect(_on_button_pressed)
 

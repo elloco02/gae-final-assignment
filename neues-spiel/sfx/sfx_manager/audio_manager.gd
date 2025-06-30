@@ -10,6 +10,12 @@ func _ready() -> void:
 		sound_effect_dict[sound_effect_setting.type] = sound_effect_setting
 	create_2d_audio_at_location(Vector2(0, 0), SoundEffectSettings.SOUND_EFFECT_TYPE.BACKGROUND_MUSIC_IN_MENU)
 
+func play_enemy_attack_sound(enemy):
+	var effect_type = SoundEffectSettings.SOUND_EFFECT_TYPE.keys()[enemy.type]
+	if effect_type != null:
+		AudioManager.create_2d_audio_at_location(enemy.global_position, effect_type.key)
+	else:
+		push_warning("Kein Soundeffekt für Enemy-Typ: %s" % enemy.type)
 
 func create_2d_audio_at_location(location: Vector2, type: SoundEffectSettings.SOUND_EFFECT_TYPE):
 	if sound_effect_dict.has(type) and not type == SoundEffectSettings.SOUND_EFFECT_TYPE.NONE:

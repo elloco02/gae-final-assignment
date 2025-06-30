@@ -13,8 +13,8 @@ var attack_timer: float = 0.0
 func enter():
 	enemy.velocity = Vector2.ZERO
 	attack.attack()
-	attack_timer = attack_duration
-
+	attack_timer = attack_duration	
+	AudioManager.play_enemy_attack_sound(enemy)
 
 func exit():
 	pass
