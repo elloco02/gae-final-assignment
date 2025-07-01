@@ -58,6 +58,7 @@ func _die() -> void:
 		AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_DIES)
 		GameManager.end_game()
 	else:
+		ScoreManager.add_score(10)
 		_spawn_death_vfx(global_position)
 		get_parent().queue_free()
 
