@@ -47,11 +47,12 @@ func _ready():
 	tile_size = map.tile_set.tile_size
 
 	# depends on that a tile is square and not rectangle
-	map_bounds = map.get_used_rect()
-	map_bounds.size.x = tile_size.x * map_bounds.size.x
-	map_bounds.size.y = tile_size.y * map_bounds.size.y
-	map_bounds.position = map.global_position
+	var used_rect = map.get_used_rect()
+	map_bounds.size.x = int(used_rect.size.x * tile_size.x)
+	map_bounds.size.y = int(used_rect.size.y * tile_size.y)
 
+	map_bounds.position.x = int(map.to_global(used_rect.position * tile_size).x)
+	map_bounds.position.y = int(map.to_global(used_rect.position * tile_size).y)
 	start_wave()
 
 
