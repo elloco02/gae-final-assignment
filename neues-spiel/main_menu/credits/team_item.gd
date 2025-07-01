@@ -29,6 +29,7 @@ func _ready() -> void:
 		push_error("No data provided, assign a Dictionary to item_data.")
 	
 	title_label.text = "[b]%s[/b]" % item_data.role
+	title_label.add_theme_color_override("default_color", Color.BLACK)
 	title_length = title_label.get_content_width()
 	for creator in item_data["creators"]:
 		var info_text = ""
@@ -46,4 +47,6 @@ func _ready() -> void:
 		label.fit_content = true
 		label.text = info_text
 		label.meta_clicked.connect(func(meta): OS.shell_open(meta))
+		label.add_theme_color_override("default_color", Color.BLACK)
+
 		people_container.add_child(label)

@@ -27,7 +27,8 @@ health_bar = NodePath("ProgressBar")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tb0m6")
 
-[node name="Gun" parent="." instance=ExtResource("3_qhqgy")]
+[node name="Gun" parent="." node_paths=PackedStringArray("ammo_label") instance=ExtResource("3_qhqgy")]
+ammo_label = NodePath("../AmmoLabel")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_qlg0r")]
 
@@ -54,3 +55,10 @@ sprite_frames = ExtResource("5_qjkh3")
 animation = &"death"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AmmoLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -44.0
+offset_right = 20.0
+offset_bottom = -21.0
+horizontal_alignment = 1

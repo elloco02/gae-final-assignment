@@ -29,6 +29,7 @@ func _ready() -> void:
 		push_error("No data provided, assign a Dictionary to item_data.")
 	
 	title_label.text = "[b]%s[/b]" % item_data.title
+	title_label.add_theme_color_override("default_color", Color.BLACK)
 	title_length = title_label.get_content_width()
 	var info_text = ""
 	if item_data.has("name") and not item_data.name.is_empty():
@@ -36,11 +37,13 @@ func _ready() -> void:
 	if item_data.has("creator") and not item_data.creator.is_empty():
 		info_text += " [i]by %s[/i]" % item_data.creator
 	info_label.text = info_text
+	info_label.add_theme_color_override("default_color", Color.BLACK)
 
 	# --- Configure Website Button ---
 	if item_data.has("url") and not item_data.url.is_empty():
 		website_button.text = "Website"
 		website_button.uri = item_data.url
+		website_button.add_theme_color_override("font_color", Color.DIM_GRAY)
 		website_button.visible = true
 	else:
 		website_button.visible = false
@@ -48,6 +51,7 @@ func _ready() -> void:
 
 	if item_data.has("license_url") and not item_data.license_url.is_empty():
 		license_button.text = "License: " + item_data.get("license", "License") # Get license name or default
+		license_button.add_theme_color_override("font_color", Color.DIM_GRAY)
 		license_button.uri = item_data["license_url"]
 		license_button.visible = true
 	else:

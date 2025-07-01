@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://o21c43cq4vbk"]
+[gd_scene load_steps=13 format=3 uid="uid://o21c43cq4vbk"]
 
 [ext_resource type="Script" uid="uid://bnvjg77xc5tkh" path="res://enemies/mummy/mummy.gd" id="1_chcyj"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="2_6p3d2"]
@@ -12,13 +12,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t3o7"]
 size = Vector2(8, 8)
-
-[sub_resource type="Gradient" id="Gradient_0tcs6"]
-offsets = PackedFloat32Array(0.789157)
-colors = PackedColorArray(0.650128, 0.650128, 0.650128, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_7t3o7"]
-gradient = SubResource("Gradient_0tcs6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bii4v"]
 size = Vector2(8, 8)
@@ -36,11 +29,6 @@ health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7t3o7")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -4.17233e-07)
-scale = Vector2(0.032, 8)
-texture = SubResource("GradientTexture1D_7t3o7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_ifpek")]
 max_health = 30.0
@@ -80,5 +68,7 @@ attack_data = ExtResource("8_1p1p6")
 shape = SubResource("RectangleShape2D_1p1p6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -9.53674e-07)
+scale = Vector2(1.125, 1.125)
 sprite_frames = ExtResource("9_bqawh")
 animation = &"attack_up"

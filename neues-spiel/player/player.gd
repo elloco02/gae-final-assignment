@@ -25,6 +25,7 @@ func _ready() -> void:
 	add_to_group("players")
 	health_component.health_changed.connect(update_health_bar)
 	start_regeneration()
+	#take_damage()
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 

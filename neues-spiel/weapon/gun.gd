@@ -2,7 +2,7 @@ class_name Gun
 extends Node2D
 
 @export var weapon_attack: WeaponAttack
-@onready var ammo_label: Label = $AmmoLabel
+@export var ammo_label: Label
 @onready var muzzle: Marker2D = $Marker2D
 @onready var player: Player = get_parent()
 @onready var reload_timer: Timer = $ReloadTimer

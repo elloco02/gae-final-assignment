@@ -59,7 +59,6 @@ func _ready():
 func start_wave():
 	start_of_wave.emit(wave)
 
-
 	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, difficulty)
 	spawned_enemies += enemies_to_spawn.size()
 
@@ -80,6 +79,8 @@ func start_wave():
 		print("Spawned enemy: ", enemy_instance, " at position: ", enemy_instance.global_position)
 
 		await get_tree().create_timer(spawn_interval).timeout
+		while GameManager.game_state != GameManager.GAME_STATES.RUNNING:
+			await get_tree().create_timer(0.1).timeout
 
 
 func get_camera_rect() -> Rect2:
