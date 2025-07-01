@@ -1,14 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm7scsrhl5veb"]
+[gd_scene load_steps=3 format=3 uid="uid://dm7scsrhl5veb"]
 
 [ext_resource type="Script" uid="uid://cop6ipvbbkwru" path="res://main_menu/frame/frame.gd" id="1_0pslg"]
-
-[sub_resource type="Theme" id="Theme_6oqjl"]
-
-[sub_resource type="Theme" id="Theme_x3q1t"]
-
-[sub_resource type="Theme" id="Theme_2ft63"]
-
-[sub_resource type="Theme" id="Theme_lwad5"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="2_qdcor"]
 
 [node name="Frame" type="ColorRect"]
 custom_minimum_size = Vector2(300, 200)
@@ -57,27 +50,27 @@ theme_override_constants/separation = 30
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_6oqjl")
+theme = ExtResource("2_qdcor")
 alignment = 1
 
 [node name="FrameLabel" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
-theme = SubResource("Theme_x3q1t")
+theme = ExtResource("2_qdcor")
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 0
 text = "Credits"
 
 [node name="CloseButton" type="Button" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_2ft63")
+theme = ExtResource("2_qdcor")
 text = "Close"
 
 [node name="ContentContainer" type="ScrollContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_lwad5")
+theme = ExtResource("2_qdcor")
 
 [connection signal="pressed" from="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=49 format=3 uid="uid://brahsq15aw7bm"]
+[gd_resource type="SpriteFrames" load_steps=52 format=3 uid="uid://brahsq15aw7bm"]
 
 [ext_resource type="Texture2D" uid="uid://d14b27ofj7tq6" path="res://assets/scorpion/scorpion-Sheet.png" id="1_1w5lk"]
 
@@ -78,13 +78,25 @@ region = Rect2(1280, 0, 32, 32)
 atlas = ExtResource("1_1w5lk")
 region = Rect2(1312, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtcmv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w5lk"]
 atlas = ExtResource("1_1w5lk")
 region = Rect2(1568, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1j613"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mbem"]
 atlas = ExtResource("1_1w5lk")
 region = Rect2(1600, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0bhu"]
+atlas = ExtResource("1_1w5lk")
+region = Rect2(1632, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e62u"]
+atlas = ExtResource("1_1w5lk")
+region = Rect2(1664, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tp2g"]
+atlas = ExtResource("1_1w5lk")
+region = Rect2(1696, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8v6a"]
 atlas = ExtResource("1_1w5lk")
@@ -266,10 +278,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gtcmv")
+"texture": SubResource("AtlasTexture_1w5lk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1j613")
+"texture": SubResource("AtlasTexture_3mbem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0bhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e62u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tp2g")
 }],
 "loop": false,
 "name": &"attack_up",

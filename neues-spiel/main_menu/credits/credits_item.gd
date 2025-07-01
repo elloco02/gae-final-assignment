@@ -52,3 +52,12 @@ func _ready() -> void:
 		license_button.visible = true
 	else:
 		license_button.visible = false
+
+	if website_button.visible:
+		website_button.pressed.connect(_on_button_pressed)
+
+	if license_button.visible:
+		license_button.pressed.connect(_on_button_pressed)
+
+func _on_button_pressed():
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)

@@ -19,7 +19,6 @@ tile_map_data = PackedByteArray("AAALAAkAAQAGAAIAAAAEAAIAAQAFAAMAAAAfABYAAQAGAAI
 position = Vector2(576, 320)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UpgradeMenu" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_6bqof")]
 unique_name_in_owner = true

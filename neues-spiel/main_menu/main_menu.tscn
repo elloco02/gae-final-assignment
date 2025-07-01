@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bf2agptph48ka" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="PackedScene" uid="uid://dm7scsrhl5veb" path="res://main_menu/frame/frame.tscn" id="2_3shxk"]
-[ext_resource type="Texture2D" uid="uid://cn4m4cd6brdvx" path="res://assets/player/character-Sheet.png" id="2_bws42"]
+[ext_resource type="Script" path="res://main_menu/option_button.gd" id="2_bws42"]
 [ext_resource type="PackedScene" uid="uid://dd5vrwfmxvrk8" path="res://main_menu/credits/credit_screen.tscn" id="2_d3a7t"]
 
 [node name="MainMenu" type="Control"]
@@ -21,7 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bws42")
 expand_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -47,7 +46,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "GAME TITLE"
+text = "DESERT SURVIVORS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -70,6 +69,15 @@ custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 text = "Scoreboard"
 
+[node name="OptionsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "Settings"
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_bws42")
+
 [node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
@@ -82,4 +90,5 @@ text = "Credits
 layout_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ScoreboardButton" to="." method="_on_scoreboard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
