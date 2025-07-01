@@ -80,6 +80,7 @@ text = "Settings"
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+alignment = 1
 script = ExtResource("3_3f7m4")
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
