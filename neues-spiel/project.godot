@@ -76,3 +76,7 @@ test={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Enemy Projectile"
 2d_physics/layer_5="Obstacles"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

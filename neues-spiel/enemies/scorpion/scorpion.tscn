@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp3h1p0md3kss"]
+[gd_scene load_steps=13 format=3 uid="uid://bp3h1p0md3kss"]
 
 [ext_resource type="Script" uid="uid://5n6gbl1l8hcy" path="res://enemies/scorpion/scorpion.gd" id="1_le87g"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_eoj0c"]
@@ -12,11 +12,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anpvi"]
 size = Vector2(8, 8)
-
-[sub_resource type="Gradient" id="Gradient_le87g"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_anpvi"]
-gradient = SubResource("Gradient_le87g")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as7p5"]
 size = Vector2(8, 8)
@@ -33,10 +28,6 @@ health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_anpvi")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.032, 8)
-texture = SubResource("GradientTexture1D_anpvi")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_eoj0c")]
 
@@ -73,5 +64,7 @@ attack_data = ExtResource("8_jhxi2")
 shape = SubResource("RectangleShape2D_jhxi2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(1.125, 1.125)
 sprite_frames = ExtResource("9_j8v6a")
-animation = &"attack_down"
+animation = &"attack_up"

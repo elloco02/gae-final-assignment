@@ -1,19 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dttmuvle25sxv"]
+[gd_scene load_steps=6 format=3 uid="uid://dttmuvle25sxv"]
 
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="1_03nxu"]
 [ext_resource type="Script" uid="uid://djqqstxi80cqd" path="res://death_screen/death_screen.gd" id="1_s3166"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yekh7"]
-bg_color = Color(0.355314, 0.355314, 0.355313, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.180392, 0.180392, 0.180392, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 10
+[ext_resource type="Texture2D" uid="uid://c47kvhpulks5y" path="res://assets/Tilemap/TileMap.png" id="2_nk1bp"]
+[ext_resource type="FontFile" uid="uid://bdvqk7gmtq34k" path="res://assets/fonts/pixel_font.ttf" id="4_3y8sy"]
 
 [sub_resource type="GDScript" id="GDScript_s3166"]
 script/source = "extends Button
@@ -32,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_03nxu")
 script = ExtResource("1_s3166")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -41,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_nk1bp")
 expand_mode = 1
 
 [node name="DeathLabel" type="Label" parent="."]
@@ -94,10 +86,18 @@ theme_override_constants/separation = 1
 alignment = 1
 
 [node name="UsernameInput" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yekh7")
-placeholder_text = "Name"
+theme = ExtResource("1_03nxu")
+theme_override_colors/font_placeholder_color = Color(0.321728, 0.321728, 0.321728, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3y8sy")
+placeholder_text = "Enter Name"
 alignment = 1
+
+[node name="Spacer4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
 
 [node name="SubmitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

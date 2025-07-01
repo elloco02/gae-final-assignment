@@ -10,6 +10,7 @@ func add_rtlabel(text):
 	label.bbcode_enabled = true
 	label.fit_content = true
 	label.text = text
+	label.add_theme_color_override("default_color", Color.BLACK)
 	add_child(label)
 	
 	

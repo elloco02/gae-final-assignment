@@ -60,7 +60,6 @@ func _die() -> void:
 		_spawn_death_vfx(global_position)
 		get_parent().queue_free()
 		
-		
 func _spawn_death_vfx(position: Vector2) -> void:
 	var vfx_instance = vfx_scene.instantiate()
 	vfx_instance.global_position = position

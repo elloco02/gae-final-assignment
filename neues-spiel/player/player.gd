@@ -25,7 +25,7 @@ func _ready() -> void:
 	add_to_group("players")
 	health_component.health_changed.connect(update_health_bar)
 	start_regeneration()
-	take_damage()
+	#take_damage()
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 
@@ -66,7 +66,7 @@ func update_health_bar(current_health: float, max_health: float) -> void:
 func take_damage() -> void:
 	await get_tree().create_timer(health_regeneration_time).timeout
 	var attack := Attack.new()
-	attack.attack_damage = 10.0
+	attack.attack_damage = 100.0
 	health_component.damage(attack)
 
 func update_animation() -> void:
