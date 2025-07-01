@@ -23,7 +23,7 @@ size = Vector2(702, 688)
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_rt4uy")
-speed = 350
+speed = 320
 health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
