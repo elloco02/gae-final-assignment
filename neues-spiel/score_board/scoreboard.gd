@@ -6,8 +6,8 @@ extends Control
 
 const HEADER_FONT_SIZE = 30
 const ENTRY_FONT_SIZE = 30
-const HEADER_COLOR = Color(0.8, 0.8, 0.8)
-const ENTRY_COLOR = Color.WHITE
+const HEADER_COLOR = Color.SADDLE_BROWN
+const ENTRY_COLOR = Color.BLACK
 const RANK_MIN_WIDTH = 80
 const NAME_MIN_WIDTH = 300
 const SCORE_MIN_WIDTH = 120
