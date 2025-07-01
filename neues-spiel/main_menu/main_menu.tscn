@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfd45waamnwgv"]
+[gd_scene load_steps=7 format=3 uid="uid://cfd45waamnwgv"]
 
 [ext_resource type="Script" uid="uid://bf2agptph48ka" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="PackedScene" uid="uid://dm7scsrhl5veb" path="res://main_menu/frame/frame.tscn" id="2_3shxk"]
-[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="2_bws42"]
+[ext_resource type="Texture2D" uid="uid://c47kvhpulks5y" path="res://assets/Tilemap/TileMap.png" id="2_6tl50"]
 [ext_resource type="PackedScene" uid="uid://dd5vrwfmxvrk8" path="res://main_menu/credits/credit_screen.tscn" id="2_d3a7t"]
 [ext_resource type="Script" path="res://main_menu/option_button.gd" id="3_3f7m4"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="3_6tl50"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_6tl50")
 expand_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -32,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_bws42")
+theme = ExtResource("3_6tl50")
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12

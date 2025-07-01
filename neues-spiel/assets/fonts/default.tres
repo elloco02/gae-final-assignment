@@ -42,31 +42,34 @@ texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
-region_rect = Rect2(64, 140, 32, 9)
+region_rect = Rect2(128, 140, 32, 9)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q43l0"]
 texture = ExtResource("2_2br3k")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-region_rect = Rect2(64, 140, 32, 9)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbcrc"]
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
-region_rect = Rect2(97, 97, 30, 14)
+region_rect = Rect2(64, 140, 32, 9)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbcrc"]
+texture = ExtResource("2_2br3k")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 140, 31, 9)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q43l0"]
 
 [resource]
 default_font = ExtResource("1_udeu7")
-Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
 Button/colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -85,7 +88,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_kbcrc")
 Button/styles/hover = SubResource("StyleBoxTexture_gtbrs")
 Button/styles/normal = SubResource("StyleBoxTexture_q43l0")
 Button/styles/pressed = SubResource("StyleBoxTexture_kbcrc")
-Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
 Label/constants/line_spacing = 3
