@@ -9,12 +9,7 @@ extends Node2D
 @onready var shoot_timer: Timer = $ShootTimer
 var bullet = preload("res://weapon/bullet.tscn")
 var bullet_upgrades: Array[BaseWeaponUpgrade] = []
-
-
-func _init() -> void:
-	# loop over all stat upgrades and apply
-	for upgrade in bullet_upgrades:
-		upgrade.apply_upgrade(weapon_attack)
+var weapon_test_bla: WeaponAttack
 
 func _ready() -> void:
 	# connect reload_timer signal to refill_ammo function, also call it at the start
@@ -22,10 +17,6 @@ func _ready() -> void:
 	refill_ammo()
 	weapon_attack.ammo_change.connect(on_ammo_change)
 	on_ammo_change(str(weapon_attack.current_ammo))
-	# loop over all bullet upgrades and apply
-	for upgrade in bullet_upgrades:
-		upgrade.apply_upgrade(weapon_attack)
-
 
 func _physics_process(_delta: float) -> void:
 	# rotate gun towards mouse position
@@ -74,7 +65,7 @@ func shoot_bullet() -> void:
 	# add bullet_instance to the tree
 	get_tree().root.add_child(bullet_instance)
 	# start timer for fire rate, the higher the fire_rate, the faster it shoots
-	shoot_timer.start(weapon_attack.maximum_fire_rate - weapon_attack.fire_rate)
+	shoot_timer.start(clampf(weapon_attack.maximum_fire_rate - weapon_attack.fire_rate, 0.0, 1.0))
 
 
 # reload the ammo visually
@@ -89,6 +80,9 @@ func reload_ammo() -> void:
 func refill_ammo() -> void:
 	weapon_attack.current_ammo = weapon_attack.max_ammo
 
-
 func on_ammo_change(amount: String) -> void:
 	ammo_label.text = amount
+
+func add_upgrade(upgrade: BaseWeaponUpgrade):
+	bullet_upgrades.append(upgrade)
+	weapon_attack = upgrade.apply_upgrade(weapon_attack)

@@ -7,5 +7,6 @@ func _init() -> void:
 	upgrade_text = "-0.5 Sekunden Reload"
 
 # increases speed for the bullet permanently
-func apply_upgrade(weapon_upgrade: WeaponAttack):
+func apply_upgrade(weapon_upgrade: WeaponAttack) -> WeaponAttack:
 	weapon_upgrade.reload_time -= reload_decrease
+	return weapon_upgrade

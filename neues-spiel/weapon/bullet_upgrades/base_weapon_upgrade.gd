@@ -8,6 +8,6 @@ func _init() -> void:
 	upgrade_text = "Base Bullet Upgrade"
 
 # this is the function that is later called when firing a bullet
-func apply_upgrade(_weapon_upgrade: WeaponAttack):
+func apply_upgrade(_weapon_upgrade: WeaponAttack) -> WeaponAttack:
 	# this does nothing by default
-	pass
+	return _weapon_upgrade

@@ -104,3 +104,7 @@ func _on_animation_finished():
 		is_shooting = false
 		var anim_name := ("walk_" if velocity.length() > 0.1 else "idle_") + last_direction
 		animated_sprite.play(anim_name)
+
+func add_upgrade(upgrade: BasePlayerUpgrade):
+	stat_upgrades.append(upgrade)
+	upgrade.apply_upgrade(self)
