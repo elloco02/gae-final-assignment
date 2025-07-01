@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=10 format=4 uid="uid://uxc3op2g7lum"]
 
 [ext_resource type="Texture2D" uid="uid://c011cl5qxyi1d" path="res://assets/Tilemap/tilemap.png" id="1_7s3b7"]
 [ext_resource type="Script" path="res://utility/score_label.gd" id="2_6utho"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_7lyf1"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="2_ba6om"]
 [ext_resource type="PackedScene" uid="uid://bn2ss744xne43" path="res://upgrade_menu/upgrade_menu.tscn" id="3_6utho"]
 [ext_resource type="PackedScene" uid="uid://o21c43cq4vbk" path="res://enemies/mummy/mummy.tscn" id="6_85qjo"]
 [ext_resource type="PackedScene" uid="uid://bp3h1p0md3kss" path="res://enemies/scorpion/scorpion.tscn" id="7_ba6om"]
@@ -161,6 +162,7 @@ sources/0 = SubResource("TileSetAtlasSource_paxxb")
 [node name="UpgradeMenu" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_6utho")]
 unique_name_in_owner = true
 visible = false
+theme = ExtResource("2_ba6om")
 player = NodePath("../../Player")
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer"]
@@ -168,6 +170,7 @@ offset_left = 11.0
 offset_top = 14.0
 offset_right = 254.0
 offset_bottom = 57.0
+theme = ExtResource("2_ba6om")
 show_percentage = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -177,6 +180,7 @@ anchor_right = 1.0
 offset_left = -163.0
 offset_bottom = 59.0
 grow_horizontal = 0
+theme = ExtResource("2_ba6om")
 theme_override_font_sizes/font_size = 28
 text = "Score: "
 script = ExtResource("2_6utho")

@@ -38,6 +38,7 @@ text = "Master"
 [node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme = ExtResource("2_6xy3w")
 max_value = 5.0
 step = 0.001
 script = ExtResource("1_8vqrp")
@@ -45,11 +46,13 @@ bus_name = "Master"
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_6xy3w")
 text = "Music"
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme = ExtResource("2_6xy3w")
 max_value = 5.0
 step = 0.001
 script = ExtResource("1_8vqrp")
@@ -57,11 +60,13 @@ bus_name = "Music"
 
 [node name="SfxLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_6xy3w")
 text = "Sfx"
 
 [node name="Sfx" type="HSlider" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme = ExtResource("2_6xy3w")
 max_value = 5.0
 step = 0.001
 script = ExtResource("1_8vqrp")
@@ -73,6 +78,7 @@ layout_mode = 2
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_6xy3w")
 text = "Return"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
