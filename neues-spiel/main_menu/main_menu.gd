@@ -24,3 +24,9 @@ func _on_scoreboard_button_pressed() -> void:
 func _on_credits_button_pressed() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED) 
 	frame.visible = true
+
+
+func _on_options_button_pressed() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED) 
+	var options_scene = load("res://main_menu/audio_settings/settings.tscn")
+	SceneManager.change_scene_to(options_scene)

@@ -59,6 +59,11 @@ custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 text = "Scoreboard"
 
+[node name="OptionsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "Settings"
+
 [node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
@@ -71,4 +76,5 @@ text = "Credits
 layout_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ScoreboardButton" to="." method="_on_scoreboard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
