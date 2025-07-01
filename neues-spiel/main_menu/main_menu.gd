@@ -10,7 +10,8 @@ func _ready() -> void:
 	start_button.pressed.connect(_on_start_button_pressed)
 
 func _on_start_button_pressed() -> void:
-	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED) 
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.BACKGROUND_MUSIC_IN_GAME)
 	ScoreManager.reset_score()
 	SceneManager.change_scene_to(game_level)
 
