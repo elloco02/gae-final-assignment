@@ -9,7 +9,6 @@ extends Node2D
 # 3: What and how many enemies to spawn?
 @export var map: TileMapLayer
 @export var player: Player
-@export var difficulty: float = 1
 @export var wave: int = 1
 @export var wave_multiplier: float = 5
 @export var time_per_wave: float = 30.0 # in seconds
@@ -59,7 +58,7 @@ func _ready():
 func start_wave():
 	start_of_wave.emit(wave)
 
-	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, difficulty)
+	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, GameManager.difficulty)
 	spawned_enemies += enemies_to_spawn.size()
 
 	var spawn_interval = time_per_wave / spawned_enemies if spawned_enemies > 0 else 1.0

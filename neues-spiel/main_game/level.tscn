@@ -47,4 +47,3 @@ script = ExtResource("4_3wu5s")
 [node name="WaveManager" parent="." node_paths=PackedStringArray("map", "player") instance=ExtResource("4_ejys3")]
 map = NodePath("../Floor")
 player = NodePath("../Player")
-wave = 6

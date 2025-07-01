@@ -28,7 +28,7 @@ radius = 106.042
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_7pew1")
-speed = 40
+speed = 75
 sound_type = 3
 health_component = NodePath("HealthComponent")
 

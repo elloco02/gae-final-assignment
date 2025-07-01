@@ -11,4 +11,9 @@ func _ready() -> void:
 
 func damage(attack: Attack) -> void:
 	if health_component:
-		health_component.damage(attack)
+		if self.get_parent() is Player:
+			var atk = Attack.new()
+			atk.damage = attack.damage * GameManager.difficulty
+			health_component.damage(atk)
+		else:
+			health_component.damage(attack)

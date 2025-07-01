@@ -16,8 +16,9 @@ var game_state: GAME_STATES = GAME_STATES.RUNNING:
 
 signal on_state_change(GAME_STATES)
 
-var difficulty : float = 1.0 : 
-	set(value): 
+var difficulty: float = 1.0:
+	set(value):
+		print("difficulty: ", value)
 		difficulty = value
 		change_difficulty.emit(value)
 

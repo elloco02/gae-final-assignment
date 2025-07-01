@@ -23,6 +23,7 @@ size = Vector2(528, 498)
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_le87g")
+speed = 250
 sound_type = 2
 health_component = NodePath("HealthComponent")
 

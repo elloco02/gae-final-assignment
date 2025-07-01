@@ -3,6 +3,11 @@ extends EnemyAttack
 
 @export var attack_data: Attack = Attack.new()
 
+func _ready() -> void:
+	if not attack_data:
+		push_error("Attack data must be set for EnemyMeleeAttack")
+		return
+
 
 func attack():
 	var players = get_overlapping_areas()
