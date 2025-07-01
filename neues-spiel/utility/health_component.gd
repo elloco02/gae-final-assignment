@@ -37,9 +37,10 @@ func _ready():
 
 
 func damage(attack: Attack) -> void:
+	print("HealthComponent: damage called with attack: ", attack)
 	if get_parent() is Player:
 		AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_TAKE_DAMAGE)
-	health = max(health - attack.attack_damage, 0.0)
+	health = max(health - attack.damage, 0.0)
 
 
 func heal(amount: float) -> void:
@@ -54,15 +55,16 @@ func regenerate() -> void:
 func _die() -> void:
 	on_death.emit()
 	if get_parent() is Player:
-		AudioManager.create_2d_audio_at_location(global_position ,SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_DIES)
-		GameManager.end_game()	
+		AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_DIES)
+		GameManager.end_game()
 	else:
 		_spawn_death_vfx(global_position)
 		get_parent().queue_free()
-		
-func _spawn_death_vfx(position: Vector2) -> void:
+
+
+func _spawn_death_vfx(death_vfx_position: Vector2) -> void:
 	var vfx_instance = vfx_scene.instantiate()
-	vfx_instance.global_position = position
+	vfx_instance.global_position = death_vfx_position
 	get_tree().current_scene.add_child(vfx_instance)
 	# TODO check if enemy sprite becomes invisible before particles are played
 	vfx_instance.emitting = true

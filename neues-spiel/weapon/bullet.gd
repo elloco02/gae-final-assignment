@@ -23,6 +23,9 @@ func _on_area_entered(area: Area2D):
 	if not area is HitboxComponent:
 		return
 
+	var hitbox: HitboxComponent = area as HitboxComponent
+	hitbox.damage(weapon_attack)
+
 	current_pierce_count += 1
 	if current_pierce_count >= weapon_attack.max_pierce:
 		queue_free()

@@ -17,7 +17,7 @@ size = Vector2(8, 8)
 size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhxi2"]
-size = Vector2(36, 36)
+size = Vector2(528, 498)
 
 [node name="Scorpion" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 collision_layer = 4
@@ -30,6 +30,8 @@ health_component = NodePath("HealthComponent")
 shape = SubResource("RectangleShape2D_anpvi")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_eoj0c")]
+max_health = 50.0
+health_regeneration = 0.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_m4trt")]
 collision_layer = 4

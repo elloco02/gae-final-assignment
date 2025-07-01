@@ -1,8 +1,6 @@
-
-[gd_scene load_steps=12 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=10 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="Script" uid="uid://br2jyo85ecc1r" path="res://main_game/level.gd" id="1_ejys3"]
-[ext_resource type="Texture2D" uid="uid://c011cl5qxyi1d" path="res://assets/Tilemap/tilemap.png" id="1_t1tgv"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_3wu5s"]
 [ext_resource type="PackedScene" uid="uid://dbjyjq6qmlshc" path="res://assets/Tilemap/floor.tscn" id="2_ejys3"]
 [ext_resource type="PackedScene" uid="uid://dkpn1ckdl27ch" path="res://assets/Tilemap/decoration.tscn" id="3_5bjsq"]
