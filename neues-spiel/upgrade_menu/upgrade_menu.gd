@@ -58,9 +58,9 @@ func add_upgrade(upgrade, button: Button):
 	else:
 		button.disabled = true
 
-func get_random_index(index_list: Array[int], size: int) -> int:
+func get_random_index(index_list: Array[int], list_size: int) -> int:
 	for i in range(10):
-		var index: int = randi_range(0, size)
+		var index: int = randi_range(0, list_size)
 		if index_list.find(index) == -1:
 			return index
 	return 0
@@ -76,7 +76,7 @@ func start_next_wave() -> void:
 	pick_random_upgrades()
 
 # open shop menu on wave end
-func open_shop_menu(wave: int) -> void:
+func open_shop_menu(_wave: int) -> void:
 	GameManager.game_state = GameManager.GAME_STATES.UPGRADEMENU
 
 func on_state_change(value: GameManager.GAME_STATES) -> void:

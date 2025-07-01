@@ -17,18 +17,21 @@ size = Vector2(8, 8)
 size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0cyw"]
-size = Vector2(36, 36)
+size = Vector2(702, 688)
 
 [node name="Bat" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_rt4uy")
+speed = 350
 health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4k4o5")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_5m14n")]
+max_health = 20.0
+health_regeneration = 0.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_i6os3")]
 collision_layer = 4
@@ -60,6 +63,7 @@ metadata/_custom_type_script = "uid://wkapnnnb6v74"
 attack_data = ExtResource("8_f0cyw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyMeleeAttack"]
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f0cyw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,5 +1,5 @@
 class_name WeaponAttack
-extends Resource
+extends Attack
 
 @export var current_ammo: int = 0:
 	set(amount):
@@ -7,7 +7,6 @@ extends Resource
 		ammo_change.emit(str(amount))
 
 
-@export var damage: float = 1.0
 @export var fire_rate: float = 0.0
 @export var max_ammo: int = 10
 @export var maximum_fire_rate: float = 1.0

@@ -9,7 +9,6 @@ extends Node2D
 # 3: What and how many enemies to spawn?
 @export var map: TileMapLayer
 @export var player: Player
-@export var difficulty: float = 1
 @export var wave: int = 1
 @export var wave_multiplier: float = 5
 @export var time_per_wave: float = 30.0 # in seconds
@@ -21,8 +20,8 @@ var tile_size: Vector2i
 var spawned_enemies: int:
 	set(value):
 		if value <= 0:
-			end_wave()
 			spawned_enemies = 0
+			end_wave()
 		else:
 			spawned_enemies = value
 
@@ -45,11 +44,13 @@ func _ready():
 	if not camera:
 		push_error("Camera2D not found in player children. Please ensure the player has a Camera2D child node.")
 
-	tile_size = map.get_used_cells()[0]
+	tile_size = map.tile_set.tile_size
 
 	# depends on that a tile is square and not rectangle
-	map_bounds = map.get_used_rect().grow(-tile_size.x)
-	map_bounds.position = to_global(map_bounds.position)
+	map_bounds = map.get_used_rect()
+	map_bounds.size.x = tile_size.x * map_bounds.size.x
+	map_bounds.size.y = tile_size.y * map_bounds.size.y
+	map_bounds.position = map.global_position
 
 	start_wave()
 
@@ -57,10 +58,11 @@ func _ready():
 func start_wave():
 	start_of_wave.emit(wave)
 
-	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, difficulty)
-	spawned_enemies = enemies_to_spawn.size()
+	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, GameManager.difficulty)
+	spawned_enemies += enemies_to_spawn.size()
 
 	var spawn_interval = time_per_wave / spawned_enemies if spawned_enemies > 0 else 1.0
+	await get_tree().create_timer(spawn_interval).timeout
 
 	for enemy in enemies_to_spawn:
 		var enemy_instance: Enemy = enemy.scene.instantiate()
@@ -68,7 +70,7 @@ func start_wave():
 			push_error("Failed to instantiate enemy scene: ", enemy.scene)
 			continue
 
-		enemy_instance.global_position = EnemySpawnLocation.get_spawn_position(get_camera_rect(), map_bounds)
+		enemy_instance.global_position = to_global(EnemySpawnLocation.get_spawn_position(get_camera_rect(), map_bounds))
 		enemy_instance.health_component.on_death.connect(on_enemy_death)
 
 		get_tree().current_scene.add_child.call_deferred(enemy_instance)
@@ -76,27 +78,26 @@ func start_wave():
 		print("Spawned enemy: ", enemy_instance, " at position: ", enemy_instance.global_position)
 
 		await get_tree().create_timer(spawn_interval).timeout
+		while GameManager.game_state != GameManager.GAME_STATES.RUNNING:
+			await get_tree().create_timer(0.1).timeout
 
 
 func get_camera_rect() -> Rect2:
-	var rect = camera.get_viewport_rect().grow(tile_size.x)
-	rect.position = to_global(rect.position)
+	var rect = camera.get_viewport_rect()
+	rect.position = camera.global_position
+	rect.size = Vector2(
+		(rect.size.x / camera.zoom.x) + tile_size.x,
+		(rect.size.y / camera.zoom.y) + tile_size.y
+	)
+	rect.position.x = rect.position.x - (rect.size.x / 2)
+	rect.position.y = rect.position.y - (rect.size.y / 2)
 	return rect
 
 
 func on_enemy_death():
 	spawned_enemies -= 1
-	if spawned_enemies < 0:
-		push_error("Spawned enemies count went below zero. This should not happen.")
-		spawned_enemies = 0
 
 
 func end_wave():
 	end_of_wave.emit(wave)
 	wave += 1
-	pass
-
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("test"):
-		end_wave()
