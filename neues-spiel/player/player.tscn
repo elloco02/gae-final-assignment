@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://coji56ys8lkjd"]
+[gd_scene load_steps=10 format=3 uid="uid://coji56ys8lkjd"]
 
 [ext_resource type="Script" uid="uid://bk7bumy0nkakd" path="res://player/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://b6u7o0ecj7fx6" path="res://weapon/gun.tscn" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="4_qlg0r"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="5_g6k8r"]
 [ext_resource type="SpriteFrames" uid="uid://bdnd47f4j6yxb" path="res://assets/player/player_animation_frames.tres" id="5_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="5_tuyoq"]
 
@@ -44,6 +45,7 @@ offset_left = -24.0
 offset_top = 25.0
 offset_right = 24.0
 offset_bottom = 38.0
+theme = ExtResource("5_g6k8r")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 1
 theme_override_styles/fill = SubResource("StyleBoxFlat_qjkh3")

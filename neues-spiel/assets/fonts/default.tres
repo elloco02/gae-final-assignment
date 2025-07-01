@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b5yn6363jrcyb"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b5yn6363jrcyb"]
 
 [ext_resource type="FontFile" uid="uid://bdvqk7gmtq34k" path="res://assets/fonts/pixel_font.ttf" id="1_udeu7"]
+[ext_resource type="Texture2D" uid="uid://bjttlyka8jyst" path="res://assets/Tilemap/TileMap3-Sheet.png" id="2_2br3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtbrs"]
 content_margin_left = 4.0
@@ -36,18 +37,18 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtbrs"]
+texture = ExtResource("2_2br3k")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
-region_rect = Rect2(97, 81, 30, 14)
+region_rect = Rect2(64, 140, 32, 9)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q43l0"]
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
-region_rect = Rect2(97, 65, 30, 14)
+texture = ExtResource("2_2br3k")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(64, 140, 32, 9)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbcrc"]
 texture_margin_left = 8.0

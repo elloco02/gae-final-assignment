@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=8 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_3wu5s"]
 [ext_resource type="PackedScene" uid="uid://dbjyjq6qmlshc" path="res://assets/Tilemap/floor.tscn" id="2_ejys3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bn2ss744xne43" path="res://upgrade_menu/upgrade_menu.tscn" id="3_6bqof"]
 [ext_resource type="Script" path="res://utility/score_label.gd" id="4_3wu5s"]
 [ext_resource type="PackedScene" uid="uid://dkhehdrxphfjr" path="res://main_game/wave_manager/wave_manager.tscn" id="4_ejys3"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="5_ejys3"]
 
 [node name="Level2" type="Node2D"]
 
@@ -23,12 +24,14 @@ position = Vector2(576, 320)
 [node name="UpgradeMenu" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_6bqof")]
 unique_name_in_owner = true
 visible = false
+theme = ExtResource("5_ejys3")
 player = NodePath("../../Player")
 
 [node name="Score" type="Label" parent="CanvasLayer"]
 offset_left = 12.0
 offset_right = 94.0
 offset_bottom = 31.0
+theme = ExtResource("5_ejys3")
 theme_override_font_sizes/font_size = 25
 text = "Score: "
 script = ExtResource("4_3wu5s")

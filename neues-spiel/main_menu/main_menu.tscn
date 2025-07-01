@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfd45waamnwgv"]
+[gd_scene load_steps=6 format=3 uid="uid://cfd45waamnwgv"]
 
 [ext_resource type="Script" uid="uid://bf2agptph48ka" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="PackedScene" uid="uid://dm7scsrhl5veb" path="res://main_menu/frame/frame.tscn" id="2_3shxk"]
-[ext_resource type="Script" path="res://main_menu/option_button.gd" id="2_bws42"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="2_bws42"]
 [ext_resource type="PackedScene" uid="uid://dd5vrwfmxvrk8" path="res://main_menu/credits/credit_screen.tscn" id="2_d3a7t"]
+[ext_resource type="Script" path="res://main_menu/option_button.gd" id="3_3f7m4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_bws42")
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -76,7 +78,7 @@ text = "Settings"
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("2_bws42")
+script = ExtResource("3_3f7m4")
 
 [node name="CreditsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)

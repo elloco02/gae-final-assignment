@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6u7o0ecj7fx6"]
+[gd_scene load_steps=4 format=3 uid="uid://b6u7o0ecj7fx6"]
 
 [ext_resource type="Script" uid="uid://bjnupvvd80lg1" path="res://weapon/gun.gd" id="1_og67c"]
 [ext_resource type="Resource" uid="uid://d17m2o7at7ee4" path="res://weapon/bullet_upgrades/resources/weapon_attack_base.tres" id="2_86mfe"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="3_86mfe"]
 
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_og67c")
@@ -21,5 +22,6 @@ offset_left = 16.0
 offset_top = -24.0
 offset_right = 40.0
 offset_bottom = -1.0
+theme = ExtResource("3_86mfe")
 horizontal_alignment = 1
 vertical_alignment = 1
