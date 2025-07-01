@@ -28,8 +28,8 @@ func enter():
 	enemy.animated_sprite.play("attack_" + dir_name)
 	enemy.velocity = Vector2.ZERO
 	attack.attack()
-	attack_timer = attack_duration
-
+	attack_timer = attack_duration	
+	AudioManager.create_2d_audio_at_location(enemy.global_position, enemy.sound_type)
 
 func exit():
 	pass

@@ -29,6 +29,7 @@ collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_7pew1")
 speed = 40
+sound_type = 3
 health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

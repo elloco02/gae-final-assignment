@@ -54,6 +54,8 @@ func shoot_bullet() -> void:
 	# do nothing if shoot_timer is running
 	if shoot_timer.time_left > 0:
 		return
+	
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_ATTACK)
 		
 	var shoot_direction = Vector2.RIGHT.rotated(rotation)
 	player.play_shoot_animation(shoot_direction)
@@ -74,6 +76,7 @@ func shoot_bullet() -> void:
 func reload_ammo() -> void:
 	# start reload timer
 	reload_timer.start(weapon_attack.reload_time)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_RELOAD)
 	# TODO: add some animation for the reload process
 
 

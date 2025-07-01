@@ -2,8 +2,8 @@ class_name Enemy
 
 extends CharacterBody2D
 
-
 @export var speed: int = 200
+@export var sound_type: SoundEffectSettings.SOUND_EFFECT_TYPE = SoundEffectSettings.SOUND_EFFECT_TYPE.BAT
 @export var health_component: HealthComponent
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
