@@ -4,12 +4,16 @@ class_name EnemySpawnLocation
 static func get_spawn_position(camera: Rect2, map_bounds: Rect2) -> Vector2i:
 	# Must be outside the camera but inside the map bounds
 	var spawn_position: Vector2i
+	print("Camera rect: ", camera)
+	print("Map bounds: ", map_bounds)
 
 	var possible_positions: Array[Rect2] = get_possible_positions(camera, map_bounds)
 
 	if possible_positions.is_empty():
 		push_error("No valid spawn positions found outside the camera bounds.")
 		return Vector2.ZERO # Return a default position if no valid spawn positions are found
+
+	print("Possible spawn positions: ", possible_positions)
 
 	# Choose a random rectangle from the possible positions
 	var random_index: int = randi() % possible_positions.size()
@@ -20,6 +24,9 @@ static func get_spawn_position(camera: Rect2, map_bounds: Rect2) -> Vector2i:
 		randi_range(spawn_rect.position.x as int, (spawn_rect.position.x + spawn_rect.size.x) as int),
 		randi_range(spawn_rect.position.y as int, (spawn_rect.position.y + spawn_rect.size.y) as int)
 	)
+
+	print("Spawn position chosen: ", spawn_position)
+	print("Spawn rectangle: ", spawn_rect)
 
 	return spawn_position
 

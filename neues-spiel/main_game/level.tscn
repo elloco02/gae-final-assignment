@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c011cl5qxyi1d" path="res://assets/Tilemap/tilemap.png" id="1_t1tgv"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_3wu5s"]
-[ext_resource type="PackedScene" path="res://assets/Tilemap/floor.tscn" id="2_ejys3"]
-[ext_resource type="PackedScene" path="res://assets/Tilemap/decoration.tscn" id="3_5bjsq"]
+[ext_resource type="PackedScene" uid="uid://dbjyjq6qmlshc" path="res://assets/Tilemap/floor.tscn" id="2_ejys3"]
+[ext_resource type="PackedScene" uid="uid://dkpn1ckdl27ch" path="res://assets/Tilemap/decoration.tscn" id="3_5bjsq"]
 [ext_resource type="PackedScene" uid="uid://bn2ss744xne43" path="res://upgrade_menu/upgrade_menu.tscn" id="3_6bqof"]
-[ext_resource type="Script" path="res://utility/score_label.gd" id="4_3wu5s"]
+[ext_resource type="Script" uid="uid://cyu3a5oi2qofe" path="res://utility/score_label.gd" id="4_3wu5s"]
 [ext_resource type="PackedScene" uid="uid://dkhehdrxphfjr" path="res://main_game/wave_manager/wave_manager.tscn" id="4_ejys3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
@@ -184,6 +184,6 @@ text = "Score: "
 script = ExtResource("4_3wu5s")
 
 [node name="WaveManager" parent="." node_paths=PackedStringArray("map", "player") instance=ExtResource("4_ejys3")]
-map = NodePath("../Ground")
+map = NodePath("../Floor")
 player = NodePath("../Player")
 wave = 6
