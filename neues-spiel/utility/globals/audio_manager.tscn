@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 1
 sound_effect = ExtResource("4_rnyec")
-volume = 0
+volume = -20
 bus = "Sfx"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -32,7 +32,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 0
 sound_effect = ExtResource("3_5oab8")
-volume = 0
+volume = -20
 bus = "Master"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 8
 sound_effect = ExtResource("6_sl6vk")
-volume = 0
+volume = -20
 bus = "Sfx"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -48,7 +48,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 6
 sound_effect = ExtResource("7_sl6vk")
-volume = 0
+volume = -20
 bus = "Sfx"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -56,7 +56,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 9
 sound_effect = ExtResource("8_ith7a")
-volume = 0
+volume = -20
 bus = "Master"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -64,7 +64,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 5
 sound_effect = ExtResource("9_f13y8")
-volume = 0
+volume = -20
 bus = "Master"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -72,7 +72,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 2
 sound_effect = ExtResource("10_84m0s")
-volume = 0
+volume = -20
 bus = "Master"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
@@ -80,7 +80,7 @@ metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 script = ExtResource("2_8msbp")
 type = 3
 sound_effect = ExtResource("11_ya0ud")
-volume = 0
+volume = -20
 bus = "Master"
 metadata/_custom_type_script = "uid://dh08cv6sgf04d"
 
