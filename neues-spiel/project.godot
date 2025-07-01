@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ScoreManager="*res://utility/globals/score_manager.gd"
 SceneManager="*res://utility/globals/scene_manager.gd"
 GameManager="*res://utility/globals/game_manager.gd"
+AudioManager="*res://utility/globals/audio_manager.tscn"
 
 [global_group]
 

@@ -16,5 +16,12 @@ var game_state: GAME_STATES = GAME_STATES.RUNNING:
 
 signal on_state_change(GAME_STATES)
 
+var difficulty : float = 1.0 : 
+	set(value): 
+		difficulty = value
+		change_difficulty.emit(value)
+
+signal change_difficulty(float)
+
 func end_game():
 	await SceneManager.change_scene_to(player_death_scene)

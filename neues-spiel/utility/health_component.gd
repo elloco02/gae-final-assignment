@@ -1,6 +1,8 @@
 class_name HealthComponent
 extends Node2D
 
+var vfx_scene = preload("res://vfx/death_particles.tscn")
+
 @export var max_health: float = 100.0:
 	set(val):
 		max_health = val
@@ -35,12 +37,15 @@ func _ready():
 
 
 func damage(attack: Attack) -> void:
-	health -= attack.attack_damage
+	if get_parent() is Player:
+		AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_TAKE_DAMAGE)
+	health = max(health - attack.attack_damage, 0.0)
 
 
 func heal(amount: float) -> void:
-	health += amount
-
+	if get_parent() is Player:
+		AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_HEAL)
+	health = min(health + amount, max_health)
 
 func regenerate() -> void:
 	heal(health_regeneration)
@@ -49,6 +54,20 @@ func regenerate() -> void:
 func _die() -> void:
 	on_death.emit()
 	if get_parent() is Player:
-		GameManager.end_game()
+		AudioManager.create_2d_audio_at_location(global_position ,SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_DIES)
+		GameManager.end_game()	
 	else:
+		_spawn_death_vfx(global_position)
 		get_parent().queue_free()
+		
+		
+func _spawn_death_vfx(position: Vector2) -> void:
+	var vfx_instance = vfx_scene.instantiate()
+	vfx_instance.global_position = position
+	get_tree().current_scene.add_child(vfx_instance)
+	# TODO check if enemy sprite becomes invisible before particles are played
+	vfx_instance.emitting = true
+
+	var lifetime = vfx_instance.lifetime
+	await get_tree().create_timer(lifetime).timeout
+	vfx_instance.queue_free()

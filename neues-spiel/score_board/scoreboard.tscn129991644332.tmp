@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5qto3ifmrhe8"]
+
+[ext_resource type="Script" uid="uid://hqqr7a4egjhg" path="res://score_board/scoreboard.gd" id="1_gfyoi"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="2_hc2hi"]
+
+[node name="Scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gfyoi")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_hc2hi")
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_hc2hi")
+text = "Return"
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_hc2hi")
+text = "Highscores"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
