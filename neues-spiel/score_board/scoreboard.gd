@@ -4,7 +4,6 @@ extends Control
 @onready var vertical_container = $MarginContainer/VBoxContainer
 @onready var main_menu_scene: PackedScene = preload("res://main_menu/main_menu.tscn")
 
-const DEFAULT_FONT = preload("res://assets/fonts/default.tres")
 const HEADER_FONT_SIZE = 30
 const ENTRY_FONT_SIZE = 30
 const HEADER_COLOR = Color(0.8, 0.8, 0.8)
