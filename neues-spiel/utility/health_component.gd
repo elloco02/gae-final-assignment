@@ -65,6 +65,7 @@ func _spawn_death_vfx(position: Vector2) -> void:
 	var vfx_instance = vfx_scene.instantiate()
 	vfx_instance.global_position = position
 	get_tree().current_scene.add_child(vfx_instance)
+	# TODO check if enemy sprite becomes invisible before particles are played
 	vfx_instance.emitting = true
 
 	var lifetime = vfx_instance.lifetime
