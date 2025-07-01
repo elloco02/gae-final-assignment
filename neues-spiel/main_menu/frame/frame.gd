@@ -10,6 +10,7 @@ func _ready() -> void:
 	print("Printing frame")
 	if frame_label:
 		frame_label.text = title
+		frame_label.add_theme_color_override("default_color", Color.BLACK)
 	if get_child_count() > 1:
 		var content = get_child(1)
 		remove_child(content)

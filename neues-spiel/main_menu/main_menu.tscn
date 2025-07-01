@@ -80,6 +80,7 @@ text = "Settings"
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_6tl50")
 alignment = 1
 script = ExtResource("3_3f7m4")
 
@@ -90,7 +91,6 @@ text = "Credits
 "
 
 [node name="Frame" parent="CanvasLayer" instance=ExtResource("2_3shxk")]
-theme = null
 
 [node name="CreditsContainer" parent="CanvasLayer/Frame" instance=ExtResource("2_d3a7t")]
 layout_mode = 0
