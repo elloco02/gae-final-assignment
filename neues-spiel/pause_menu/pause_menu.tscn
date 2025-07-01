@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn2ss744xne43"]
+[gd_scene load_steps=2 format=3 uid="uid://c8jc0mvw26eqh"]
 
-[ext_resource type="Script" uid="uid://cwf675w64ku06" path="res://upgrade_menu/upgrade_menu.gd" id="1_womms"]
+[ext_resource type="Script" uid="uid://6e002dyh4o33" path="res://pause_menu/pause_menu.gd" id="1_5hbt6"]
 
-[node name="UpgradeMenu" type="Control"]
+[node name="PauseMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_womms")
+script = ExtResource("1_5hbt6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -19,23 +19,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="NextWaveButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Next Wave"
+text = "Resume Game"
+
+[node name="MainMenu" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"

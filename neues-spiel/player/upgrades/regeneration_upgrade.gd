@@ -8,4 +8,4 @@ func _init() -> void:
 
 # decreases the regeneration time for the player permanently
 func apply_upgrade(player: Player):
-	player.health_component.health_regeneration_time += regeneration_time_decrease
+	player.health_regeneration_time -= regeneration_time_decrease
