@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp3h1p0md3kss"]
+[gd_scene load_steps=14 format=3 uid="uid://bp3h1p0md3kss"]
 
 [ext_resource type="Script" uid="uid://5n6gbl1l8hcy" path="res://enemies/scorpion/scorpion.gd" id="1_le87g"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_eoj0c"]
@@ -19,19 +19,27 @@ size = Vector2(8, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhxi2"]
 size = Vector2(528, 498)
 
-[node name="Scorpion" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8v6a"]
+bg_color = Color(0, 0.65098, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Scorpion" type="CharacterBody2D" node_paths=PackedStringArray("health_component", "health_bar")]
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_le87g")
 speed = 250
 sound_type = 2
 health_component = NodePath("HealthComponent")
+health_bar = NodePath("ProgressBar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_anpvi")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_eoj0c")]
-max_health = 50.0
+max_health = 60.0
 health_regeneration = 0.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_m4trt")]
@@ -71,3 +79,14 @@ position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(1.125, 1.125)
 sprite_frames = ExtResource("9_j8v6a")
 animation = &"attack_up"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = 20.0
+offset_right = 17.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_j8v6a")
+value = 100.0
+show_percentage = false

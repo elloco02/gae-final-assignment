@@ -39,13 +39,12 @@ func pick_random_upgrades() -> void:
 
 # add upgrade to the corresponding game element (player or weapon)
 func add_upgrade(upgrade, button: Button):
-	match upgrade:
-		BasePlayerUpgrade:
-			player.stat_upgrades.append(upgrade)
-			print("Player Upgrade %s added" % [upgrade.upgrade_text])
-		BaseWeaponUpgrade:
-			weapon.bullet_upgrades.append(upgrade)
-			print("Weapon Upgrade %s added" % [upgrade.upgrade_text])
+	if upgrade is BasePlayerUpgrade:
+		player.add_upgrade(upgrade)
+		print("Player Upgrade %s added" % [upgrade.upgrade_text])
+	elif upgrade is BaseWeaponUpgrade:
+		weapon.add_upgrade(upgrade)
+		print("Weapon Upgrade %s added" % [upgrade.upgrade_text])
 	# disable all other upgrades after picking an amount equal to pickable_upgrades
 	taken_upgrades += 1
 	if taken_upgrades == pickable_upgrades:
