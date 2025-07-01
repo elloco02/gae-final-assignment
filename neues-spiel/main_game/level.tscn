@@ -37,7 +37,6 @@ visible = false
 [node name="UpgradeMenu" parent="CanvasLayer" node_paths=PackedStringArray("player", "wave_manager") instance=ExtResource("3_6bqof")]
 unique_name_in_owner = true
 visible = false
-theme = ExtResource("5_ejys3")
 player = NodePath("../../Player")
 wave_manager = NodePath("../../WaveManager")
 

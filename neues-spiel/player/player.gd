@@ -15,8 +15,8 @@ var last_direction: String = "down"
 
 func _init() -> void:
 	# loop over all stat upgrades and apply
-	#for upgrade in stat_upgrades:
-		#upgrade.apply_upgrade(self)
+	for upgrade in stat_upgrades:
+		upgrade.apply_upgrade(self)
 	pass
 
 

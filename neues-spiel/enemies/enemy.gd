@@ -13,7 +13,7 @@ func _ready() -> void:
 		push_error("HealthComponent must be set for Enemy")
 		return
 	health_component.max_health *= GameManager.difficulty
-
+	health_component.health = health_component.max_health
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
