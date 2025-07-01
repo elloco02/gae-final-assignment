@@ -39,14 +39,6 @@ func get_input() -> void:
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 
-	if Input.is_action_just_pressed("pause game") and not get_tree().paused:
-		pause()
-		%UpgradeMenu.visible = not %UpgradeMenu.visible
-
-
-func pause() -> void:
-	get_tree().paused = true
-
 
 # TEMPORARY SOLUTION UNTIL WAVE MANAGEMENT IS IMPLEMENTED
 func temp_apply_upgrades() -> void:
