@@ -43,7 +43,7 @@ func _ready() -> void:
 	if item_data.has("url") and not item_data.url.is_empty():
 		website_button.text = "Website"
 		website_button.uri = item_data.url
-		website_button.add_theme_color_override("default_color", Color.BLACK)
+		website_button.add_theme_color_override("font_color", Color.DIM_GRAY)
 		website_button.visible = true
 	else:
 		website_button.visible = false
@@ -51,7 +51,7 @@ func _ready() -> void:
 
 	if item_data.has("license_url") and not item_data.license_url.is_empty():
 		license_button.text = "License: " + item_data.get("license", "License") # Get license name or default
-		license_button.add_theme_color_override("default_color", Color.BLACK)
+		license_button.add_theme_color_override("font_color", Color.DIM_GRAY)
 		license_button.uri = item_data["license_url"]
 		license_button.visible = true
 	else:
