@@ -26,8 +26,7 @@ static func get_enemies_to_spawn(enemies: Dictionary[String, EnemyData], wave: i
 	var enemies_to_spawn: Array[EnemyData] = []
 	var rng = RandomNumberGenerator.new()
 
-	var total_weight = (wave * wave_multiplier * difficulty) + 10
-
+	var total_weight = (wave * wave_multiplier * difficulty * difficulty) + 10
 	rng.seed = total_weight
 
 	var allowed_enemies: Array[EnemyData] = get_allowed_enemies(enemies, wave)
