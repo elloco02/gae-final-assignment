@@ -26,8 +26,8 @@ var spawned_enemies: int:
 		else:
 			spawned_enemies = value
 
-signal endOfWave(int)
-signal startOfWave(int)
+signal end_of_wave(int)
+signal start_of_wave(int)
 
 var enemies: Dictionary[String, EnemyData] = {
 	"mummy": EnemyData.create(1, 1, preload("res://enemies/mummy/mummy.tscn")),
@@ -55,7 +55,7 @@ func _ready():
 
 
 func start_wave():
-	startOfWave.emit(wave)
+	start_of_wave.emit(wave)
 
 	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, difficulty)
 	spawned_enemies = enemies_to_spawn.size()
@@ -92,6 +92,11 @@ func on_enemy_death():
 
 
 func end_wave():
-	endOfWave.emit(wave)
+	end_of_wave.emit(wave)
 	wave += 1
 	pass
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("test"):
+		end_wave()
