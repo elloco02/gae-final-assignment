@@ -10,6 +10,7 @@ extends Node2D
 var bullet = preload("res://weapon/bullet.tscn")
 var bullet_upgrades: Array[BaseWeaponUpgrade] = []
 
+
 func _ready() -> void:
 	# connect reload_timer signal to refill_ammo function, also call it at the start
 	reload_timer.timeout.connect(refill_ammo)
@@ -19,6 +20,7 @@ func _ready() -> void:
 	# loop over all bullet upgrades and apply
 	for upgrade in bullet_upgrades:
 		upgrade.apply_upgrade(weapon_attack)
+
 
 func _physics_process(_delta: float) -> void:
 	# rotate gun towards mouse position
@@ -46,6 +48,7 @@ func _physics_process(_delta: float) -> void:
 		print("Reload")
 		reload_ammo()
 
+
 # shoot a bullet if gun is ready to fire again
 func shoot_bullet() -> void:
 	# do nothing if shoot_timer is running
@@ -53,6 +56,10 @@ func shoot_bullet() -> void:
 		return
 	
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_ATTACK)
+		
+	var shoot_direction = Vector2.RIGHT.rotated(rotation)
+	player.play_shoot_animation(shoot_direction)
+
 	# create bullet with all of its upgrades
 	weapon_attack.current_ammo -= 1
 	var bullet_instance: Bullet = bullet.instantiate()
@@ -64,6 +71,7 @@ func shoot_bullet() -> void:
 	# start timer for fire rate, the higher the fire_rate, the faster it shoots
 	shoot_timer.start(weapon_attack.maximum_fire_rate - weapon_attack.fire_rate)
 
+
 # reload the ammo visually
 func reload_ammo() -> void:
 	# start reload timer
@@ -71,12 +79,15 @@ func reload_ammo() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_RELOAD)
 	# TODO: add some animation for the reload process
 
+
 # fills the current_ammo after reload_timer finishes and sends a signal
 func refill_ammo() -> void:
 	weapon_attack.current_ammo = weapon_attack.max_ammo
 
+
 func on_ammo_change(amount: String) -> void:
 	ammo_label.text = amount
+
 
 # TEMPORARY SOLUTION UNTIL WAVE MANAGEMENT IS IMPLEMENTED
 func temp_apply_upgrades() -> void:

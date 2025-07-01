@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bp3h1p0md3kss"]
+[gd_scene load_steps=15 format=3 uid="uid://bp3h1p0md3kss"]
 
 [ext_resource type="Script" uid="uid://5n6gbl1l8hcy" path="res://enemies/scorpion/scorpion.gd" id="1_le87g"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_eoj0c"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://wkapnnnb6v74" path="res://enemies/enemy_follow_state.gd" id="5_h8wf3"]
 [ext_resource type="PackedScene" uid="uid://doqqe02jv0c2n" path="res://enemies/enemy_melee_attack.tscn" id="7_vedtl"]
 [ext_resource type="Resource" uid="uid://c8csgkub8ggt2" path="res://enemies/scorpion/scorpion_attack.tres" id="8_jhxi2"]
+[ext_resource type="SpriteFrames" uid="uid://brahsq15aw7bm" path="res://assets/scorpion/new_sprite_frames.tres" id="9_j8v6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anpvi"]
 size = Vector2(8, 8)
@@ -23,11 +24,12 @@ size = Vector2(8, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhxi2"]
 size = Vector2(36, 36)
 
-[node name="Scorpion" type="CharacterBody2D"]
+[node name="Scorpion" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_le87g")
 sound_type = 2
+health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_anpvi")
@@ -69,3 +71,7 @@ attack_data = ExtResource("8_jhxi2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyMeleeAttack"]
 shape = SubResource("RectangleShape2D_jhxi2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("9_j8v6a")
+animation = &"attack_down"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7ju42r1ol66n"]
+[gd_scene load_steps=13 format=3 uid="uid://b7ju42r1ol66n"]
 
 [ext_resource type="Script" uid="uid://dp0ninotv6vlc" path="res://enemies/bat/bat.gd" id="1_rt4uy"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_5m14n"]
+[ext_resource type="SpriteFrames" uid="uid://km5mwfqlm1n8" path="res://assets/bat/new_sprite_frames.tres" id="2_do1l7"]
 [ext_resource type="Script" uid="uid://dsh2u5okbvv0s" path="res://enemies/statemachine.gd" id="3_5m14n"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="3_i6os3"]
 [ext_resource type="Script" uid="uid://qjjnwwgx0533" path="res://enemies/enemy_attack_state.gd" id="4_18mee"]
@@ -12,28 +13,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4k4o5"]
 size = Vector2(8, 8)
 
-[sub_resource type="Gradient" id="Gradient_rt4uy"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4k4o5"]
-gradient = SubResource("Gradient_rt4uy")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18mee"]
 size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0cyw"]
 size = Vector2(36, 36)
 
-[node name="Bat" type="CharacterBody2D"]
+[node name="Bat" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_rt4uy")
+health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4k4o5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.032, 8)
-texture = SubResource("GradientTexture1D_4k4o5")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_5m14n")]
 
@@ -68,3 +61,7 @@ attack_data = ExtResource("8_f0cyw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyMeleeAttack"]
 shape = SubResource("RectangleShape2D_f0cyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_do1l7")
+animation = &"attack_up"

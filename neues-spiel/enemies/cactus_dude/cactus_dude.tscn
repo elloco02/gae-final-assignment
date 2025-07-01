@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmbuf0drv1452"]
+[gd_scene load_steps=15 format=3 uid="uid://cmbuf0drv1452"]
 
 [ext_resource type="Script" uid="uid://dqd28sbxnlm6b" path="res://enemies/cactus_dude/cactus_dude.gd" id="1_7pew1"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_v75ud"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://wkapnnnb6v74" path="res://enemies/enemy_follow_state.gd" id="5_uvlcf"]
 [ext_resource type="Script" uid="uid://dlmjc2vshsp7b" path="res://enemies/enemy_range_attack.gd" id="7_optdm"]
 [ext_resource type="PackedScene" uid="uid://kgt2btxicblq" path="res://enemies/cactus_dude/cactus_attack_projectile.tscn" id="8_37eqp"]
+[ext_resource type="SpriteFrames" uid="uid://bdg3khylrujd5" path="res://assets/cactus_man/cactus_dude_animation_frames.tres" id="9_fu10q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nblqe"]
 size = Vector2(8, 8)
@@ -23,12 +24,13 @@ size = Vector2(8, 8)
 [sub_resource type="CircleShape2D" id="CircleShape2D_37uyd"]
 radius = 143.0
 
-[node name="CactusDude" type="CharacterBody2D"]
+[node name="CactusDude" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 collision_layer = 4
 collision_mask = 16
 script = ExtResource("1_7pew1")
 speed = 40
 sound_type = 3
+health_component = NodePath("HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nblqe")
@@ -78,3 +80,7 @@ visible = false
 shape = SubResource("CircleShape2D_37uyd")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("9_fu10q")
+animation = &"attack_down"

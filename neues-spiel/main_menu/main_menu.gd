@@ -3,7 +3,7 @@ extends Control
 
 @onready var start_button: Button = $CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/StartButton
 @onready var frame: Frame = $CanvasLayer/Frame
-@onready var game_level: PackedScene = preload("res://utility/level.tscn")
+@onready var game_level: PackedScene = preload("res://main_game/level.tscn")
 
 func _ready() -> void:
 	frame.visible = false
