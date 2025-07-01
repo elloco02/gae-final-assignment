@@ -38,8 +38,6 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("RectangleShape2D_qlg0r")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -24.0
 offset_top = 25.0
@@ -54,3 +52,5 @@ show_percentage = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("5_qjkh3")
 animation = &"death"
+
+[node name="Camera2D" type="Camera2D" parent="."]

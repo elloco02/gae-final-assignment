@@ -57,14 +57,14 @@ func _ready():
 
 
 func start_wave():
-	startOfWave.emit(wave)
+	start_of_wave.emit(wave)
 
-	await get_tree().create_timer(1).timeout
 
 	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, difficulty)
-	spawned_enemies = enemies_to_spawn.size()
+	spawned_enemies += enemies_to_spawn.size()
 
 	var spawn_interval = time_per_wave / spawned_enemies if spawned_enemies > 0 else 1.0
+	await get_tree().create_timer(spawn_interval).timeout
 
 	for enemy in enemies_to_spawn:
 		var enemy_instance: Enemy = enemy.scene.instantiate()
@@ -72,7 +72,7 @@ func start_wave():
 			push_error("Failed to instantiate enemy scene: ", enemy.scene)
 			continue
 
-		enemy_instance.position = EnemySpawnLocation.get_spawn_position(get_camera_rect(), map_bounds)
+		enemy_instance.global_position = to_global(EnemySpawnLocation.get_spawn_position(get_camera_rect(), map_bounds))
 		enemy_instance.health_component.on_death.connect(on_enemy_death)
 
 		get_tree().current_scene.add_child.call_deferred(enemy_instance)
@@ -89,6 +89,8 @@ func get_camera_rect() -> Rect2:
 		(rect.size.x / camera.zoom.x) + tile_size.x,
 		(rect.size.y / camera.zoom.y) + tile_size.y
 	)
+	rect.position.x = rect.position.x - (rect.size.x / 2)
+	rect.position.y = rect.position.y - (rect.size.y / 2)
 	return rect
 
 
@@ -99,9 +101,3 @@ func on_enemy_death():
 func end_wave():
 	end_of_wave.emit(wave)
 	wave += 1
-	pass
-
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("test"):
-		end_wave()

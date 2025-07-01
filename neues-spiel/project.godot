@@ -22,6 +22,11 @@ SceneManager="*res://utility/globals/scene_manager.gd"
 GameManager="*res://utility/globals/game_manager.gd"
 AudioManager="*res://utility/globals/audio_manager.tscn"
 
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720
+
 [global_group]
 
 Players="Collection of players"
@@ -76,3 +81,7 @@ test={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Enemy Projectile"
 2d_physics/layer_5="Obstacles"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
