@@ -31,7 +31,7 @@ health_component = NodePath("HealthComponent")
 shape = SubResource("RectangleShape2D_anpvi")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_eoj0c")]
-max_health = 50.0
+max_health = 60.0
 health_regeneration = 0.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_m4trt")]

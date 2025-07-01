@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=12 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="Script" uid="uid://br2jyo85ecc1r" path="res://main_game/level.gd" id="1_ejys3"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_3wu5s"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://utility/score_label.gd" id="4_3wu5s"]
 [ext_resource type="PackedScene" uid="uid://dkhehdrxphfjr" path="res://main_game/wave_manager/wave_manager.tscn" id="4_ejys3"]
 [ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="5_ejys3"]
+[ext_resource type="PackedScene" uid="uid://cmbuf0drv1452" path="res://enemies/cactus_dude/cactus_dude.tscn" id="11_2nx2i"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_ejys3")
@@ -52,3 +53,5 @@ script = ExtResource("4_3wu5s")
 [node name="WaveManager" parent="." node_paths=PackedStringArray("map", "player") instance=ExtResource("4_ejys3")]
 map = NodePath("../Floor")
 player = NodePath("../Player")
+
+[node name="CactusDude" parent="." instance=ExtResource("11_2nx2i")]
