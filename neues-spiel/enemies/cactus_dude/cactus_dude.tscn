@@ -22,7 +22,7 @@ gradient = SubResource("Gradient_7pew1")
 size = Vector2(8, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_37uyd"]
-radius = 143.0
+radius = 106.042
 
 [node name="CactusDude" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 collision_layer = 4
@@ -40,6 +40,7 @@ scale = Vector2(0.032, 8)
 texture = SubResource("GradientTexture1D_nblqe")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_v75ud")]
+max_health = 25.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_i7bif")]
 collision_layer = 4
@@ -76,7 +77,6 @@ spawn_marker = NodePath("../Marker2D")
 metadata/_custom_type_script = "uid://dlmjc2vshsp7b"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyRangeAttack"]
-visible = false
 shape = SubResource("CircleShape2D_37uyd")
 
 [node name="Marker2D" type="Marker2D" parent="."]

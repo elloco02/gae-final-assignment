@@ -28,7 +28,9 @@ scale_curve = SubResource("CurveTexture_3y0kp")
 color_ramp = SubResource("GradientTexture1D_fmq4m")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
 amount = 40
 interp_to_end = 0.201
+one_shot = true
 explosiveness = 0.79
 process_material = SubResource("ParticleProcessMaterial_61jog")
