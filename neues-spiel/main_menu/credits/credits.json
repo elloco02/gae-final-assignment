@@ -36,18 +36,18 @@
 			"title": "Third Party Assets",
 			"items": [
 				{
-					"title": "Background Image",
-					"name": "TBD",
-					"creator": "TBD",
-					"url": "TBD",
+					"title": "Sound effects for bats, mummies and desert cactus",
+					"name": "soundeffectdatabase",
+					"creator": "soundeffectdatabase",
+					"url": "https://soundeffectdatabase.com/aboutus.php",
 					"license": "Free Asset on itch.io",
 				},
 				{
 					"title": "Menu Music",
-					"name": "TBD",
-					"creator": "TBD",
-					"url": "TBD",
-					"license": "TBD",
+					"name": "Western Adventures",
+					"creator": "David Fesliyan",
+					"url": "https://www.FesliyanStudios.com",
+					"license": "https://www.fesliyanstudios.com/policy",
 				},
 			]
 		},
