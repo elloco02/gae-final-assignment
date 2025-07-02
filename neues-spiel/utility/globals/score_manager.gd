@@ -12,7 +12,7 @@ var highscores = []
 signal on_score_change(new_score: int)
 
 func add_score(points: int) -> void:
-	score += points
+	score += points * int(GameManager.difficulty)
 
 
 func reset_score() -> void:
