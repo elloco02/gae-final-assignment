@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bsbfttkm3ssnd"]
+[gd_scene load_steps=12 format=4 uid="uid://bsbfttkm3ssnd"]
 
 [ext_resource type="Script" uid="uid://br2jyo85ecc1r" path="res://main_game/level.gd" id="1_ejys3"]
 [ext_resource type="PackedScene" uid="uid://coji56ys8lkjd" path="res://player/player.tscn" id="2_3wu5s"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dkpn1ckdl27ch" path="res://assets/Tilemap/decoration.tscn" id="3_5bjsq"]
 [ext_resource type="PackedScene" uid="uid://bn2ss744xne43" path="res://upgrade_menu/upgrade_menu.tscn" id="3_6bqof"]
 [ext_resource type="PackedScene" uid="uid://c8jc0mvw26eqh" path="res://pause_menu/pause_menu.tscn" id="3_ejys3"]
-[ext_resource type="Script" path="res://utility/score_label.gd" id="4_3wu5s"]
+[ext_resource type="Script" uid="uid://cyu3a5oi2qofe" path="res://utility/score_label.gd" id="4_3wu5s"]
 [ext_resource type="PackedScene" uid="uid://dkhehdrxphfjr" path="res://main_game/wave_manager/wave_manager.tscn" id="4_ejys3"]
 [ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="5_ejys3"]
+[ext_resource type="PackedScene" uid="uid://dj5ru8cgsxduq" path="res://stats_menu/stats_menu.tscn" id="8_2nx2i"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_ejys3")
@@ -39,7 +40,14 @@ visible = false
 player = NodePath("../../Player")
 wave_manager = NodePath("../../WaveManager")
 
+[node name="StatsMenu" parent="CanvasLayer" node_paths=PackedStringArray("player", "wave_manager") instance=ExtResource("8_2nx2i")]
+unique_name_in_owner = true
+visible = false
+player = NodePath("../../Player")
+wave_manager = NodePath("../../WaveManager")
+
 [node name="Score" type="Label" parent="CanvasLayer"]
+visible = false
 offset_left = 12.0
 offset_right = 94.0
 offset_bottom = 31.0

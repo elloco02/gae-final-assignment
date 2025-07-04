@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj5ru8cgsxduq"]
+
+[ext_resource type="Script" uid="uid://bexxvp6g7x4j3" path="res://stats_menu/stats_menu.gd" id="1_k341u"]
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="1_lvf75"]
+
+[node name="StatsMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+theme = ExtResource("1_lvf75")
+script = ExtResource("1_k341u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -79.0
+offset_right = 60.0
+offset_bottom = 79.0
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Wave" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Health" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HealthRegeneration" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MovementSpeed" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BulletDamage" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ReloadTime" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
