@@ -1,11 +1,10 @@
-## Abgabe      Datum 23.06.2025
+## Abgabe      Datum 05.07.2025
 
 ### Spieltitel
-TBD
+Desert Survivors
 
 ### Itch.io
-Password: TBD
-[Website](https://sepia2023.itch.io/TBD)
+[Website](https://sepia2023.itch.io/desert-survivors)
 
 
 ### Source-Code (GitLabGitHub)
