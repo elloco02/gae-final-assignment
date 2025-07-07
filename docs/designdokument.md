@@ -5,9 +5,8 @@ Desert Survivors
 
 ### Kern (Vision oder Box-Rückseitentext):
 In Desert Survivors stellst du dich endlosen Gegnerwellen, die immer stärker und zahlreicher werden. Du steuerst deine Figur aus der Vogelperspektive, weichst Angriffen aus und schießt mit deinem Gewehr auf deine Gegner, um zu überleben. Zwischen den Wellen erhältst du die Möglichkeit, aus zufälligen Upgrades zu wählen. Jede Entscheidung verändert deinen Spielstil: mehr Schaden, zusätzliche Effekte oder doch lieber höhere Überlebensfähigkeit. Mit jeder Runde wächst die Stärke deiner Figur und die deiner Gegner.
-Vor jedem Lauf kannst du aus verschiedenen Schwierigkeitsstufen wählen, um dich selbst zu challengen. Am Ende jeder Runde kannst dich im weltweiten Scoreboard eintragen, um dich mit anderen Überlebenskünstlern zu messen.
+Vor jedem Lauf kannst du aus verschiedenen Schwierigkeitsstufen wählen, um dich selbst zu challengen. Am Ende jeder Runde kannst dich im Scoreboard eintragen, um dich mit anderen Überlebenskünstlern zu messen.
 Der Spielablauf ist schnell und herausfordernd: Du musst dich immer in Bewegung halten und klug positionieren, um deine Überlebenschancen zu erhöhen. Die einfachen Spielregeln und die vielfältigen Upgrades sorgen dafür, dass das Spiel sowohl für kurze Sessions als auch für längere Runs perfekt geeignet ist.
-
 
 ### Team und Verantwortlichkeiten:
 * Eren – UI/UX, Dokumentation & iExpo Plakat
