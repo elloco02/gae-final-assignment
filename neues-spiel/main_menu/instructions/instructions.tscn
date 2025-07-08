@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqbgkemhjegv8"]
+
+[ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="1_h0moy"]
+[ext_resource type="Texture2D" uid="uid://c47kvhpulks5y" path="res://assets/Tilemap/TileMap.png" id="1_sle3x"]
+[ext_resource type="Script" uid="uid://ddqnauytu6lyo" path="res://main_menu/instructions/instructions.gd" id="2_f3wlk"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h0moy")
+script = ExtResource("2_f3wlk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_sle3x")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_h0moy")
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_h0moy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("1_h0moy")
+
+[node name="CloseButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_h0moy")
+text = "Close"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_h0moy")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_h0moy")
+text = "How to play:
+\"WASD\" to move the player character. 
+Left Mouse button to shoot at the enemies. Hold down for auto-fire.
+Press \"R\" to reload your ammo. The ammo is labeled above the players head.
+
+Shoot at Enemies to deal damage with each bullet that hits their core.
+There are 4 different enemy types:
+- Mummy: slow movement, medium health points and low damage, melee attack type
+- Bat: very fast movement, low health points and high damage, melee attack type
+- Scorpion: fast movement, high health points and low damage, melee attack type
+- Cactus: slow movement, medium health points and high damage, range attack type
+
+The goal is to beat waves of enemies. The higher the wave, the more difficult it will be. After
+each wave you can choose 1 out of 3 upgrades. The upgrades options are randomized, so
+choose wisely.
+The goal is to get as many points as possible by killing enemies. When your health bar reaches
+0, you lose.
+
+You can increase the game difficutly in the main menu. This also makes the enemies stronger,
+but also increases the points earned per enemy killed."
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
