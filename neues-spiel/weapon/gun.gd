@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 		return
 
 	# shoot a bullet if current_ammo is greater than 0
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		print("current_ammo:", weapon_attack.current_ammo)
 		if weapon_attack.current_ammo > 0:
 			print("Shoot")
