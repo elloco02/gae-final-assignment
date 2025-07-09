@@ -1,6 +1,6 @@
 extends Node
 
-const HIGHSCORE_FILE = "res://highscores.json"
+const HIGHSCORE_FILE = "user://highscores.json"
 var score: int:
 	set(value):
 		score = value
