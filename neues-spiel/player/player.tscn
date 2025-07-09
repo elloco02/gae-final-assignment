@@ -58,9 +58,11 @@ animation = &"death"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AmmoLabel" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -44.0
-offset_right = 20.0
-offset_bottom = -21.0
+custom_minimum_size = Vector2(97, 23)
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 49.0
+offset_bottom = -17.0
 theme = ExtResource("6_g6k8r")
 horizontal_alignment = 1
+vertical_alignment = 1
