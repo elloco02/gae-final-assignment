@@ -3,17 +3,13 @@
 [ext_resource type="FontFile" uid="uid://bdvqk7gmtq34k" path="res://assets/fonts/pixel_font.ttf" id="1_udeu7"]
 [ext_resource type="Texture2D" uid="uid://bjttlyka8jyst" path="res://assets/Tilemap/TileMap3-Sheet.png" id="2_2br3k"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtbrs"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sb2rq"]
+texture = ExtResource("2_2br3k")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 140, 32, 9)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbcrc"]
 content_margin_left = 4.0
@@ -349,7 +345,7 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_udeu7")
-Button/styles/disabled = SubResource("StyleBoxFlat_gtbrs")
+Button/styles/disabled = SubResource("StyleBoxTexture_sb2rq")
 Button/styles/focus = SubResource("StyleBoxFlat_kbcrc")
 Button/styles/hover = SubResource("StyleBoxTexture_gtbrs")
 Button/styles/normal = SubResource("StyleBoxTexture_q43l0")
