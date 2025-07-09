@@ -2,6 +2,8 @@ class_name Player
 
 extends CharacterBody2D
 
+const ACCELERATION: float = 10.0
+
 @export var speed: float = 300.0
 @export var health_bar: ProgressBar
 @onready var health_component: HealthComponent = $HealthComponent
@@ -11,6 +13,7 @@ extends CharacterBody2D
 
 var stat_upgrades: Array[BasePlayerUpgrade] = []
 var is_shooting = false
+var input: Vector2
 var last_direction: String = "down"
 
 func _init() -> void:
@@ -29,15 +32,18 @@ func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 
-func _physics_process(_delta: float) -> void:
-	get_input()
+func _physics_process(delta: float) -> void:
+	var player_input = get_input()
+	velocity = lerp(velocity, player_input * speed, delta * ACCELERATION)
 	move_and_slide()
 	update_animation()
 
 # get input direction from key press
-func get_input() -> void:
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+func get_input() -> Vector2:
+	#var input_direction = Input.get_vector("left", "right", "up", "down")
+	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	input.y =  Input.get_action_strength("down") -  Input.get_action_strength("up")
+	return input.normalized()
 
 
 # TEMPORARY SOLUTION UNTIL WAVE MANAGEMENT IS IMPLEMENTED
