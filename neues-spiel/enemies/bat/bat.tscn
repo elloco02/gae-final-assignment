@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp0ninotv6vlc" path="res://enemies/bat/bat.gd" id="1_rt4uy"]
 [ext_resource type="PackedScene" uid="uid://dptv1wk2l4ilc" path="res://utility/health_component.tscn" id="2_5m14n"]
-[ext_resource type="SpriteFrames" uid="uid://km5mwfqlm1n8" path="res://assets/bat/new_sprite_frames.tres" id="2_do1l7"]
+[ext_resource type="SpriteFrames" uid="uid://km5mwfqlm1n8" path="res://assets/bat/bat_sprite_frames.tres" id="2_do1l7"]
 [ext_resource type="Script" uid="uid://dsh2u5okbvv0s" path="res://enemies/statemachine.gd" id="3_5m14n"]
 [ext_resource type="PackedScene" uid="uid://bbuxg4s10u72f" path="res://utility/hitbox_component.tscn" id="3_i6os3"]
 [ext_resource type="Script" uid="uid://qjjnwwgx0533" path="res://enemies/enemy_attack_state.gd" id="4_18mee"]

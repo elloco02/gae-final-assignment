@@ -3,7 +3,6 @@ extends Control
 @onready var title_label = $MarginContainer/VBoxContainer/HBoxContainer/Title
 @onready var vertical_container = $MarginContainer/VBoxContainer
 @onready var main_menu_scene: PackedScene = preload("res://main_menu/main_menu.tscn")
-
 const HEADER_FONT_SIZE = 30
 const ENTRY_FONT_SIZE = 30
 const HEADER_COLOR = Color.SADDLE_BROWN
@@ -11,10 +10,10 @@ const ENTRY_COLOR = Color.BLACK
 const RANK_MIN_WIDTH = 80
 const NAME_MIN_WIDTH = 300
 const SCORE_MIN_WIDTH = 120
-
 var highscores_container: VBoxContainer
 var scroll_container: ScrollContainer
 var no_scores_label: Label
+
 
 func _ready():
 	_setup_title_style()
@@ -24,13 +23,11 @@ func _ready():
 
 func _create_ui():
 	_create_header()
-
 	# Scrollbar
 	scroll_container = ScrollContainer.new()
 	scroll_container.name = "ScrollContainer"
 	scroll_container.size_flags_horizontal = SIZE_EXPAND_FILL
 	scroll_container.size_flags_vertical = SIZE_EXPAND_FILL
-
 	# Highscores
 	highscores_container = VBoxContainer.new()
 	highscores_container.name = "Highscores"
@@ -44,9 +41,7 @@ func _display_highscores():
 	for child in highscores_container.get_children():
 		if child.name != "Header":
 			child.queue_free()
-
 	var highscores = ScoreManager.load_highscores()
-
 	for i in range(highscores.size()):
 		var entry = highscores[i]
 		print(str(i) + " " + entry["username"] + " " + str(entry["score"]))

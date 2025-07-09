@@ -33,6 +33,10 @@ size_flags_vertical = 0
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="EnemiesToKill" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="Health" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2

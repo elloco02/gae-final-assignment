@@ -5,6 +5,7 @@ extends Control
 @onready var main_menu_scene: PackedScene = preload("res://main_menu/main_menu.tscn")
 @onready var score_board_scene: PackedScene = preload("res://score_board/scoreboard.tscn")
 
+
 func _ready() -> void:
 	score_label.text = "Your score: " + str(ScoreManager.score)
 

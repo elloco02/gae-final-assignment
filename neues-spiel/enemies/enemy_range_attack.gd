@@ -1,5 +1,4 @@
 class_name EnemyRangeAttack
-
 extends EnemyAttack
 
 @export var projectile: PackedScene

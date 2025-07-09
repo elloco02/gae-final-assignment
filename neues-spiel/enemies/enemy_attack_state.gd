@@ -1,14 +1,14 @@
 class_name EnemyAttackState
-
 extends State
+
 
 @export var enemy: Enemy
 @export var attack_duration: float = 1.0 # Time in seconds the attack is needs
 @export var attack: EnemyAttack
 @export var follow_state: EnemyFollowState
-
 var attack_timer: float = 0.0
 var players: Array[Player] = []
+
 
 func enter():
 	var nodes = get_tree().get_nodes_in_group("players")
@@ -30,6 +30,7 @@ func enter():
 	attack.attack()
 	attack_timer = attack_duration	
 	AudioManager.create_2d_audio_at_location(enemy.global_position, enemy.sound_type)
+
 
 func exit():
 	pass

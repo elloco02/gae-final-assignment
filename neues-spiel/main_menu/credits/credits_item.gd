@@ -13,16 +13,16 @@ Example data:
 }
 '''
 @export var item_data: Dictionary
-
 @onready var title_label: RichTextLabel = %TitleLabel
 @onready var info_label: RichTextLabel = %InfoLabel
 @onready var website_button: LinkButton = %WebsiteButton
 @onready var license_button: LinkButton = %LicenseButton
-
 var title_length = 0
+
 
 func set_title_width(value: int):
 	title_label.custom_minimum_size.x = value + 50
+
 
 func _ready() -> void:
 	if not item_data:
@@ -62,6 +62,7 @@ func _ready() -> void:
 
 	if license_button.visible:
 		license_button.pressed.connect(_on_button_pressed)
+
 
 func _on_button_pressed():
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)

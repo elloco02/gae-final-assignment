@@ -46,7 +46,6 @@ func change_scene_to(scene: PackedScene) -> void:
 	fade_in()
 
 
-# FIXME: possibly dangerous tween code
 func fade_out():
 	var fade = fade_layer.get_node("Fade")
 	fade.modulate.a = 0

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbvg18c8q10vy"
-path="res://.godot/imported/cactus_man-Sheet.png-ecea52a940e7b5d0d568b99c6cc62302.ctex"
+path="res://.godot/imported/cactus-Sheet.png-8306c7994f9aed1c557f1c99c722b3c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cactus_man/cactus_man-Sheet.png"
-dest_files=["res://.godot/imported/cactus_man-Sheet.png-ecea52a940e7b5d0d568b99c6cc62302.ctex"]
+source_file="res://assets/cactus/cactus-Sheet.png"
+dest_files=["res://.godot/imported/cactus-Sheet.png-8306c7994f9aed1c557f1c99c722b3c2.ctex"]
 
 [params]
 

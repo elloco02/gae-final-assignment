@@ -12,17 +12,14 @@ var game_state: GAME_STATES = GAME_STATES.RUNNING:
 			get_tree().paused = false
 		else:
 			get_tree().paused = true
-
-
-signal on_state_change(GAME_STATES)
-
 var difficulty: float = 1.0:
 	set(value):
 		print("difficulty: ", value)
 		difficulty = value
 		change_difficulty.emit(value)
-
+signal on_state_change(GAME_STATES)
 signal change_difficulty(float)
+
 
 func end_game():
 	await SceneManager.change_scene_to(player_death_scene)

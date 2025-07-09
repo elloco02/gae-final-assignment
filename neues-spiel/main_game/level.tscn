@@ -42,7 +42,6 @@ wave_manager = NodePath("../../WaveManager")
 
 [node name="StatsMenu" parent="CanvasLayer" node_paths=PackedStringArray("player", "wave_manager") instance=ExtResource("8_2nx2i")]
 unique_name_in_owner = true
-visible = false
 player = NodePath("../../Player")
 wave_manager = NodePath("../../WaveManager")
 

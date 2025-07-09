@@ -1,5 +1,4 @@
 class_name EnemyAttack
-
 extends Area2D
 
 

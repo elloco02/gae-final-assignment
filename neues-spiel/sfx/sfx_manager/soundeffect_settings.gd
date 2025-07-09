@@ -1,6 +1,7 @@
 extends Resource
 class_name SoundEffectSettings
 
+
 enum SOUND_EFFECT_TYPE {
 	BAT,
 	MUMIE,
@@ -16,7 +17,6 @@ enum SOUND_EFFECT_TYPE {
 	BACKGROUND_MUSIC_IN_MENU,
 	NONE
 }
-
 @export var type: SOUND_EFFECT_TYPE
 @export var sound_effect: AudioStream
 @export_range(-50, 50) var volume = 0

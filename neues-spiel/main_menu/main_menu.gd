@@ -6,9 +6,11 @@ extends Control
 @onready var instructions: Control = $CanvasLayer/Instructions
 @onready var game_level: PackedScene = preload("res://main_game/level.tscn")
 
+
 func _ready() -> void:
 	frame.visible = false
 	start_button.pressed.connect(_on_start_button_pressed)
+
 
 func _on_start_button_pressed() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)

@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://qjjnwwgx0533" path="res://enemies/enemy_attack_state.gd" id="5_7t3o7"]
 [ext_resource type="PackedScene" uid="uid://doqqe02jv0c2n" path="res://enemies/enemy_melee_attack.tscn" id="7_1p1p6"]
 [ext_resource type="Resource" uid="uid://clf63wch0u3" path="res://enemies/mummy/mummy_attack.tres" id="8_1p1p6"]
-[ext_resource type="SpriteFrames" uid="uid://dsuh10038dvim" path="res://assets/mummy/new_sprite_frames.tres" id="9_bqawh"]
+[ext_resource type="SpriteFrames" uid="uid://dsuh10038dvim" path="res://assets/mummy/mummy_sprite_frames.tres" id="9_bqawh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t3o7"]
 size = Vector2(8, 8)
