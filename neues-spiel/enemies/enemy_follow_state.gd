@@ -1,11 +1,9 @@
 class_name EnemyFollowState
-
 extends State
 
 @export var enemy: Enemy
 @export var attack_range: float = 10.0
 @export var attack_state: EnemyAttackState
-
 var players: Array[Player] = []
 
 

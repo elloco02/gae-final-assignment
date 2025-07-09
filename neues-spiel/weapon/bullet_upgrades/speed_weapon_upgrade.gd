@@ -3,6 +3,7 @@ extends BaseWeaponUpgrade
 
 @export var speed_increase: float = 300
 
+
 func _init() -> void:
 	upgrade_text = "+300 Bullet Speed"
 

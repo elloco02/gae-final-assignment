@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://wkapnnnb6v74" path="res://enemies/enemy_follow_state.gd" id="5_h8wf3"]
 [ext_resource type="PackedScene" uid="uid://doqqe02jv0c2n" path="res://enemies/enemy_melee_attack.tscn" id="7_vedtl"]
 [ext_resource type="Resource" uid="uid://c8csgkub8ggt2" path="res://enemies/scorpion/scorpion_attack.tres" id="8_jhxi2"]
-[ext_resource type="SpriteFrames" uid="uid://brahsq15aw7bm" path="res://assets/scorpion/new_sprite_frames.tres" id="9_j8v6a"]
+[ext_resource type="SpriteFrames" uid="uid://brahsq15aw7bm" path="res://assets/scorpion/scorpion_sprite_frames.tres" id="9_j8v6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anpvi"]
 size = Vector2(8, 8)

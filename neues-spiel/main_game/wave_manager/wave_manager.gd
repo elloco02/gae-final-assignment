@@ -1,22 +1,14 @@
 class_name WaveManager
-
 extends Node2D
 
-
-# 3 Problems to solve:
-# 1: Where to spawn enemies? :check:
-# 2: When to spawn enemies?
-# 3: What and how many enemies to spawn?
 @export var map: TileMapLayer
 @export var player: Player
 @export var wave: int = 1
 @export var wave_multiplier: float = 5
 @export var time_per_wave: float = 30.0 # in seconds
-
 var camera: Camera2D
 var map_bounds: Rect2
 var tile_size: Vector2i
-
 var spawned_enemies: int:
 	set(value):
 		if value <= 0:
@@ -24,16 +16,16 @@ var spawned_enemies: int:
 			end_wave()
 		else:
 			spawned_enemies = value
-
-signal end_of_wave(int)
-signal start_of_wave(int)
-
 var enemies: Dictionary[String, EnemyData] = {
 	"mummy": EnemyData.create(1, 1, preload("res://enemies/mummy/mummy.tscn")),
 	"bat": EnemyData.create(2, 3, preload("res://enemies/bat/bat.tscn")),
-	"cactus_dude": EnemyData.create(4, 6, preload("res://enemies/cactus_dude/cactus_dude.tscn")),
+	"cactus": EnemyData.create(4, 6, preload("res://enemies/cactus/cactus.tscn")),
 	"scorpion": EnemyData.create(6, 10, preload("res://enemies/scorpion/scorpion.tscn")),
 }
+signal end_of_wave(int)
+signal start_of_wave(int)
+signal update_enemy_count
+
 
 func _ready():
 	for child in player.get_children():
@@ -61,6 +53,7 @@ func start_wave():
 
 	var enemies_to_spawn: Array[EnemyData] = EnemyData.get_enemies_to_spawn(enemies, wave, wave_multiplier, GameManager.difficulty)
 	spawned_enemies += enemies_to_spawn.size()
+	update_enemy_count.emit()
 
 	var spawn_interval = time_per_wave / spawned_enemies if spawned_enemies > 0 else 1.0
 	await get_tree().create_timer(spawn_interval).timeout
@@ -97,6 +90,7 @@ func get_camera_rect() -> Rect2:
 
 func on_enemy_death():
 	spawned_enemies -= 1
+	update_enemy_count.emit()
 
 
 func end_wave():

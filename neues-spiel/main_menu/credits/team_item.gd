@@ -15,14 +15,14 @@ Example data:
 		}
 '''
 @export var item_data: Dictionary
-
 @onready var title_label: RichTextLabel = %TitleLabel
 @onready var people_container: VBoxContainer = %PeopleContainer
-
 var title_length = 0
+
 
 func set_title_width(value: int):
 	title_label.custom_minimum_size.x = value + 50
+
 
 func _ready() -> void:
 	if not item_data:

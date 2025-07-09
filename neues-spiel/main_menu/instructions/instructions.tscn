@@ -64,6 +64,7 @@ text = "How to play:
 \"WASD\" to move the player character. 
 Left Mouse button to shoot at the enemies. Hold down for auto-fire.
 Press \"R\" to reload your ammo. The ammo is labeled above the players head.
+Press \"TAB\" to toggle the stats display on the left of your screen.
 
 Shoot at Enemies to deal damage with each bullet that hits their core.
 There are 4 different enemy types:
@@ -78,7 +79,7 @@ choose wisely.
 The goal is to get as many points as possible by killing enemies. When your health bar reaches
 0, you lose.
 
-You can increase the game difficutly in the main menu. This also makes the enemies stronger,
-but also increases the points earned per enemy killed."
+You can increase the game difficutly in the main menu. This increases the points gained per
+kill, but also makes the enemies strong, faster and more durable."
 
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

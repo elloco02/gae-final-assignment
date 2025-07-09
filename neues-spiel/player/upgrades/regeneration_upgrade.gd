@@ -3,8 +3,10 @@ extends BasePlayerUpgrade
 
 @export var regeneration_time_decrease: float = 0.5
 
+
 func _init() -> void:
 	upgrade_text = "-0.5s Regeneration Time"
+
 
 # decreases the regeneration time for the player permanently
 func apply_upgrade(player: Player):

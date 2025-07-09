@@ -2,8 +2,8 @@ extends VBoxContainer
 
 const CREDITS_ITEM = preload("res://main_menu/credits/credits_item.tscn")
 const TEAM_ITEM = preload("res://main_menu/credits/team_item.tscn")
-
 var max_title_length = 0
+
 
 func add_rtlabel(text):
 	var label = RichTextLabel.new()
@@ -12,8 +12,8 @@ func add_rtlabel(text):
 	label.text = text
 	label.add_theme_color_override("default_color", Color.BLACK)
 	add_child(label)
-	
-	
+
+
 func _ready() -> void:
 	print("Parsing credits.json")
 	var json_file = FileAccess.open("res://main_menu/credits/credits.json", FileAccess.READ)

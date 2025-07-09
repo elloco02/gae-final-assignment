@@ -13,21 +13,21 @@ Example data:
 }
 '''
 @export var item_data: Dictionary
-
 @onready var title_label: RichTextLabel = %TitleLabel
 @onready var info_label: RichTextLabel = %InfoLabel
 @onready var website_button: LinkButton = %WebsiteButton
 @onready var license_button: LinkButton = %LicenseButton
-
 var title_length = 0
+
 
 func set_title_width(value: int):
 	title_label.custom_minimum_size.x = value + 50
 
+
 func _ready() -> void:
 	if not item_data:
 		push_error("No data provided, assign a Dictionary to item_data.")
-	
+
 	title_label.text = "[b]%s[/b]" % item_data.title
 	title_label.add_theme_color_override("default_color", Color.BLACK)
 	title_length = title_label.get_content_width()
@@ -63,5 +63,6 @@ func _ready() -> void:
 	if license_button.visible:
 		license_button.pressed.connect(_on_button_pressed)
 
+
 func _on_button_pressed():
-	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)
+	AudioManager.create_2d_audio_middle(SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)

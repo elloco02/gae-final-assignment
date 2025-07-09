@@ -5,23 +5,25 @@ extends Control
 @onready var upgrade_list: UpgradeList = UpgradeList.new()
 @onready var vbox = %VBoxContainer
 @onready var weapon: Gun = player.gun
+@onready var timer: Timer
 var available_upgrades: int = 3
-var input_enabled: bool = false
 var pickable_upgrades: int = 1
-var pop_up_delay: int = 2
+var pop_up_delay: float = 2.0
 var taken_upgrades: int = 0
 
-func _process(delta: float) -> void:
-	# for testing upgrade menu layout
-	if Input.is_action_just_pressed("test"):
-		open_shop_menu(wave_manager.wave)
 
 func _ready():
 	%NextWaveButton.pressed.connect(start_next_wave)
 	wave_manager.end_of_wave.connect(open_shop_menu)
 	GameManager.on_state_change.connect(on_state_change)
+	# add a timer to delay the upgrade menu pop up
+	timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout)
 	# create and add a buttons for available_upgrades amount of upgrades, randomly picked
 	pick_random_upgrades()
+
 
 # combine all upgrades from UpgradeList class into one list and create an amount
 # equal to available_upgrades for the player to choose 1 from
@@ -45,26 +47,27 @@ func pick_random_upgrades() -> void:
 		button.pressed.connect(Callable(add_upgrade).bind(upgrade, button))
 		vbox.add_child(button)
 
+
 # add upgrade to the corresponding game element (player or weapon)
 func add_upgrade(upgrade, button: Button):
-	if input_enabled:
-		if upgrade is BasePlayerUpgrade:
-			player.add_upgrade(upgrade)
-			print("Player Upgrade %s added" % [upgrade.upgrade_text])
-		elif upgrade is BaseWeaponUpgrade:
-			weapon.add_upgrade(upgrade)
-			print("Weapon Upgrade %s added" % [upgrade.upgrade_text])
-		# disable all other upgrades after picking an amount equal to pickable_upgrades
-		taken_upgrades += 1
-		if taken_upgrades == pickable_upgrades:
-			# reset counter for next wave
-			taken_upgrades = 0
-			for child in vbox.get_children():
-				if child is Button and child.is_in_group("upgrade") and not child.disabled:
-					child.disabled = true
-		# only disable button for picked upgrade
-		else:
-			button.disabled = true
+	if upgrade is BasePlayerUpgrade:
+		player.add_upgrade(upgrade)
+		print("Player Upgrade %s added" % [upgrade.upgrade_text])
+	elif upgrade is BaseWeaponUpgrade:
+		weapon.add_upgrade(upgrade)
+		print("Weapon Upgrade %s added" % [upgrade.upgrade_text])
+	# disable all other upgrades after picking an amount equal to pickable_upgrades
+	taken_upgrades += 1
+	if taken_upgrades == pickable_upgrades:
+		# reset counter for next wave
+		taken_upgrades = 0
+		for child in vbox.get_children():
+			if child is Button and child.is_in_group("upgrade") and not child.disabled:
+				child.disabled = true
+	# only disable button for picked upgrade
+	else:
+		button.disabled = true
+
 
 func get_random_index(index_list: Array[int], list_size: int) -> int:
 	for i in range(10):
@@ -72,6 +75,7 @@ func get_random_index(index_list: Array[int], list_size: int) -> int:
 		if index_list.find(index) == -1:
 			return index
 	return 0
+
 
 # start next wave
 func start_next_wave() -> void:
@@ -83,16 +87,15 @@ func start_next_wave() -> void:
 			child.queue_free()
 	pick_random_upgrades()
 
+
 # open shop menu on wave end after a short delay
 func open_shop_menu(_wave: int) -> void:
-	var timer: Timer = Timer.new()
-	add_child(timer)
-	timer.timeout.connect(_on_timer_timeout)
 	timer.start(pop_up_delay)
 
+# pause game and display ugrade menu
 func _on_timer_timeout() -> void:
 	GameManager.game_state = GameManager.GAME_STATES.UPGRADEMENU
-	input_enabled = true
+
 
 func on_state_change(value: GameManager.GAME_STATES) -> void:
 	self.visible = GameManager.GAME_STATES.UPGRADEMENU == value

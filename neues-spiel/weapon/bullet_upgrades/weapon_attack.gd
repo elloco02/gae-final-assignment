@@ -5,8 +5,6 @@ extends Attack
 	set(amount):
 		current_ammo = amount
 		ammo_change.emit(str(amount))
-
-
 @export var fire_rate: float = 0.0
 @export var max_ammo: int = 10
 @export var maximum_fire_rate: float = 1.0

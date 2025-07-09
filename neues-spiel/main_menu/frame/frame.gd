@@ -1,10 +1,10 @@
 class_name Frame
 extends ColorRect
 
+@export var title: String = ""
 @onready var content_container: ScrollContainer = %ContentContainer
 @onready var frame_label: Label = %FrameLabel
 
-@export var title: String = ""
 
 func _ready() -> void:
 	print("Printing frame")
@@ -19,6 +19,7 @@ func _ready() -> void:
 			content.close_frame_requested.connect(func(): hide())
 	else:
 		push_warning("No child node found to be displayed in this frame.")
+
 
 func _on_close_button_pressed() -> void:
 	hide()
