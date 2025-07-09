@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfd45waamnwgv"]
+[gd_scene load_steps=8 format=3 uid="uid://cfd45waamnwgv"]
 
 [ext_resource type="Script" uid="uid://bf2agptph48ka" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="PackedScene" uid="uid://dm7scsrhl5veb" path="res://main_menu/frame/frame.tscn" id="2_3shxk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dd5vrwfmxvrk8" path="res://main_menu/credits/credit_screen.tscn" id="2_d3a7t"]
 [ext_resource type="Script" uid="uid://cmmml2lrtsqrw" path="res://main_menu/option_button.gd" id="3_3f7m4"]
 [ext_resource type="Theme" uid="uid://b5yn6363jrcyb" path="res://assets/fonts/default.tres" id="3_6tl50"]
+[ext_resource type="PackedScene" uid="uid://bqbgkemhjegv8" path="res://main_menu/instructions/instructions.tscn" id="7_t6bnd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -90,11 +91,19 @@ layout_mode = 2
 text = "Credits
 "
 
+[node name="InstructionsButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Instructions"
+
 [node name="Frame" parent="CanvasLayer" instance=ExtResource("2_3shxk")]
 
 [node name="CreditsContainer" parent="CanvasLayer/Frame" instance=ExtResource("2_d3a7t")]
 layout_mode = 0
 
+[node name="Instructions" parent="CanvasLayer" instance=ExtResource("7_t6bnd")]
+visible = false
+
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/ScoreboardButton" to="." method="_on_scoreboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
