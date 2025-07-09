@@ -27,7 +27,7 @@ func set_title_width(value: int):
 func _ready() -> void:
 	if not item_data:
 		push_error("No data provided, assign a Dictionary to item_data.")
-	
+
 	title_label.text = "[b]%s[/b]" % item_data.title
 	title_label.add_theme_color_override("default_color", Color.BLACK)
 	title_length = title_label.get_content_width()
@@ -65,4 +65,4 @@ func _ready() -> void:
 
 
 func _on_button_pressed():
-	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)
+	AudioManager.create_2d_audio_middle(SoundEffectSettings.SOUND_EFFECT_TYPE.UI_BUTTON_PRESSED)

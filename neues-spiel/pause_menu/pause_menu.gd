@@ -22,3 +22,4 @@ func main_menu() -> void:
 	resume()
 	var main_menu_scene = load("res://main_menu/main_menu.tscn")
 	SceneManager.change_scene_to(main_menu_scene)
+	AudioManager.create_2d_audio_middle(SoundEffectSettings.SOUND_EFFECT_TYPE.BACKGROUND_MUSIC_IN_MENU)
