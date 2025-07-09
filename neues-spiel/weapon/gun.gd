@@ -73,7 +73,8 @@ func reload_ammo() -> void:
 	# start reload timer
 	reload_timer.start(weapon_attack.reload_time)
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffectSettings.SOUND_EFFECT_TYPE.PLAYER_RELOAD)
-	# TODO: add some animation for the reload process
+	# show player that weapon is reloading
+	ammo_label.text = "RELOADING"
 
 
 # fills the current_ammo after reload_timer finishes and sends a signal
