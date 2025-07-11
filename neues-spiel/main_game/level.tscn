@@ -46,7 +46,6 @@ player = NodePath("../../Player")
 wave_manager = NodePath("../../WaveManager")
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-visible = false
 offset_left = 12.0
 offset_right = 94.0
 offset_bottom = 31.0
